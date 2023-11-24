@@ -1,0 +1,157 @@
+<!DOCTYPE html><html><!-- Created by GNU Texinfo 7.0dev, http://www.gnu.org/software/texinfo/ --><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!-- Copyright &copy; 2006-2023 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with the
+Invariant Sections being "Funding Free Software", the Front-Cover
+texts being (a) (see below), and with the Back-Cover Texts being (b)
+(see below).  A copy of the license is included in the section entitled
+"GNU Free Documentation License".
+
+(a) The FSF's Front-Cover Text is:
+
+A GNU Manual
+
+(b) The FSF's Back-Cover Text is:
+
+You have freedom to copy and modify this GNU Manual, like GNU
+     software.  Copies published by the Free Software Foundation raise
+     funds for GNU development. -->
+<a class="dashingAutolink" name="autolink-71"></a><a class="dashAnchor" name="//apple_ref/cpp/Package/OpenMP%20Technical%20Report%2012%20%28GNU%20libgomp%29"></a><title>OpenMP Technical Report 12 (GNU libgomp)</title>
+
+<meta name="description" content="OpenMP Technical Report 12 (GNU libgomp)"/>
+<meta name="keywords" content="OpenMP Technical Report 12 (GNU libgomp)"/>
+<meta name="resource-type" content="document"/>
+<meta name="distribution" content="global"/>
+<meta name="Generator" content="makeinfo"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<link href="index.html" rel="start" title="Top"/>
+<link href="Library-Index.html" rel="index" title="Library Index"/>
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents"/>
+<link href="OpenMP-Implementation-Status.html" rel="up" title="OpenMP Implementation Status"/>
+<link href="OpenMP-5_002e2.html" rel="prev" title="OpenMP 5.2"/>
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://gcc.gnu.org/texinfo-manuals.css"/>
+
+
+</head>
+
+<body lang="en">
+<div class="section-level-extent" id="OpenMP-Technical-Report-12">
+<div class="nav-panel">
+<p>
+Previous: <a href="OpenMP-5_002e2.html" accesskey="p" rel="prev">OpenMP 5.2</a>, Up: <a href="OpenMP-Implementation-Status.html" accesskey="u" rel="up">OpenMP Implementation Status</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr/>
+<h3 class="section" id="OpenMP-Technical-Report-12-1"><span>2.5 OpenMP Technical Report 12<a class="copiable-link" href="OpenMP-Technical-Report-12.html#OpenMP-Technical-Report-12-1"> &para;</a></span></h3>
+
+<p>Technical Report (TR) 12 is the second preview for OpenMP 6.0.
+</p>
+<ul class="mini-toc">
+<li><a href="OpenMP-Technical-Report-12.html#New-features-listed-in-Appendix-B-of-the-OpenMP-specification-3" accesskey="1">New features listed in Appendix B of the OpenMP specification</a></li>
+<li><a href="OpenMP-Technical-Report-12.html#Other-new-TR-12-features" accesskey="2">Other new TR 12 features</a></li>
+</ul>
+<div class="unnumberedsubsec-level-extent" id="New-features-listed-in-Appendix-B-of-the-OpenMP-specification-3">
+<h4 class="unnumberedsubsec"><span>New features listed in Appendix B of the OpenMP specification<a class="copiable-link" href="OpenMP-Technical-Report-12.html#New-features-listed-in-Appendix-B-of-the-OpenMP-specification-3"> &para;</a></span></h4>
+<table class="multitable">
+<tbody><tr><td width="60%">Features deprecated in versions 5.2, 5.1 and 5.0 were removed</td><td width="10%">N/A</td><td width="25%">Backward compatibility</td></tr>
+<tr><td width="60%">Full support for C23 was added</td><td width="10%">P</td><td width="25%"></td></tr>
+<tr><td width="60%">Full support for C++23 was added</td><td width="10%">P</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">_ALL</code> suffix to the device-scope environment variables</td><td width="10%">P</td><td width="25%">Host device number wrongly accepted</td></tr>
+<tr><td width="60%"><code class="code">num_threads</code> now accepts a list</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%">Supporting increments with abstract names in <code class="code">OMP_PLACES</code></td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%">Extension of <code class="code">OMP_DEFAULT_DEVICE</code> and new
+      <code class="code">OMP_AVAILABLE_DEVICES</code> environment vars</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%">New <code class="code">OMP_THREADS_RESERVE</code> environment variable</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%">The <code class="code">decl</code> attribute was added to the C++ attribute syntax</td><td width="10%">Y</td><td width="25%"></td></tr>
+<tr><td width="60%">The OpenMP directive syntax was extended to include C 23 attribute
+      specifiers</td><td width="10%">Y</td><td width="25%"></td></tr>
+<tr><td width="60%">All inarguable clauses take now an optional Boolean argument</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%">For Fortran, <em class="emph">locator list</em> can be also function reference with
+      data pointer result</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%">Concept of <em class="emph">assumed-size arrays</em> in C and C++</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><em class="emph">directive-name-modifier</em> accepted in all clauses</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%">For Fortran, atomic with BLOCK construct and, for C/C++, with
+      unlimited curly braces supported</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%">For Fortran, atomic compare with storing the comparison result</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%">New <code class="code">looprange</code> clause</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%">Ref-count change for <code class="code">use_device_ptr</code>/<code class="code">use_device_addr</code></td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%">Support for inductions</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%">Implicit reduction identifiers of C++ classes</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%">Change of the <em class="emph">map-type</em> property from <em class="emph">ultimate</em> to
+      <em class="emph">default</em></td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">self</code> modifier to <code class="code">map</code> and <code class="code">self</code> as
+      <code class="code">defaultmap</code> argument</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%">Mapping of <em class="emph">assumed-size arrays</em> in C, C++ and Fortran</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">groupprivate</code> directive</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">local</code> clause to <code class="code">declare target</code> directive</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">part_size</code> allocator trait</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">pin_device</code>, <code class="code">preferred_device</code> and <code class="code">target_access</code>
+      allocator traits</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">access</code> allocator trait changes</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%">Extension of <code class="code">interop</code> operation of <code class="code">append_args</code>, allowing all
+      modifiers of the <code class="code">init</code> clause</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">interop</code> clause to <code class="code">dispatch</code></td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">message</code> and <code class="code">severity</code> calauses to <code class="code">parallel</code> directive</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">self</code> clause to <code class="code">requires</code> directive</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">no_openmp_constructs</code> assumptions clause</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">reverse</code> loop-transformation construct</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">interchange</code> loop-transformation construct</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">fuse</code> loop-transformation construct</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">apply</code> code to loop-transforming constructs</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">omp_curr_progress_width</code> identifier</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">safesync</code> clause to the <code class="code">parallel</code> construct</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">omp_get_max_progress_width</code> runtime routine</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">strict</code> modifier keyword to <code class="code">num_threads</code></td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">atomic</code> permitted in a construct with <code class="code">order(concurrent)</code></td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">coexecute</code> directive for Fortran</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%">Fortran DO CONCURRENT as associated loop in a <code class="code">loop</code> construct</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">threadset</code> clause in task-generating constructs</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">nowait</code> clause with reverse-offload <code class="code">target</code> directives</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%">Boolean argument to <code class="code">nowait</code> and <code class="code">nogroup</code> may be non constant</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">memscope</code> clause to <code class="code">atomic</code> and <code class="code">flush</code></td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">omp_is_free_agent</code> and <code class="code">omp_ancestor_is_free_agent</code> routines</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">omp_target_memset</code> and <code class="code">omp_target_memset_rect_async</code> routines</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%">Routines for obtaining memory spaces/allocators for shared/device memory</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">omp_get_memspace_num_resources</code> routine</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">omp_get_submemspace</code> routine</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">ompt_target_data_transfer</code> and <code class="code">ompt_target_data_transfer_async</code>
+      values in <code class="code">ompt_target_data_op_t</code> enum</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%"><code class="code">ompt_get_buffer_limits</code> OMPT routine</td><td width="10%">N</td><td width="25%"></td></tr>
+</tbody>
+</table>
+
+</div>
+<div class="unnumberedsubsec-level-extent" id="Other-new-TR-12-features">
+<h4 class="unnumberedsubsec"><span>Other new TR 12 features<a class="copiable-link" href="OpenMP-Technical-Report-12.html#Other-new-TR-12-features"> &para;</a></span></h4>
+<table class="multitable">
+<tbody><tr><td width="60%">Relaxed Fortran restrictions to the <code class="code">aligned</code> clause</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%">Mapping lambda captures</td><td width="10%">N</td><td width="25%"></td></tr>
+<tr><td width="60%">New <code class="code">omp_pause_stop_tool</code> constant for omp_pause_resource</td><td width="10%">N</td><td width="25%"></td></tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+</div>
+<hr/>
+<div class="nav-panel">
+<p>
+Previous: <a href="OpenMP-5_002e2.html">OpenMP 5.2</a>, Up: <a href="OpenMP-Implementation-Status.html">OpenMP Implementation Status</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+
+
+
+
+
+</body></html>

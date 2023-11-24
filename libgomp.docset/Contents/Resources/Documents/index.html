@@ -1,0 +1,404 @@
+<!DOCTYPE html><html><!-- Created by GNU Texinfo 7.0dev, http://www.gnu.org/software/texinfo/ --><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!-- Copyright &copy; 2006-2023 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with the
+Invariant Sections being "Funding Free Software", the Front-Cover
+texts being (a) (see below), and with the Back-Cover Texts being (b)
+(see below).  A copy of the license is included in the section entitled
+"GNU Free Documentation License".
+
+(a) The FSF's Front-Cover Text is:
+
+A GNU Manual
+
+(b) The FSF's Back-Cover Text is:
+
+You have freedom to copy and modify this GNU Manual, like GNU
+     software.  Copies published by the Free Software Foundation raise
+     funds for GNU development. -->
+<a class="dashingAutolink" name="autolink-122"></a><a class="dashAnchor" name="//apple_ref/cpp/Package/Top%20%28GNU%20libgomp%29"></a><title>Top (GNU libgomp)</title>
+
+<meta name="description" content="Top (GNU libgomp)"/>
+<meta name="keywords" content="Top (GNU libgomp)"/>
+<meta name="resource-type" content="document"/>
+<meta name="distribution" content="global"/>
+<meta name="Generator" content="makeinfo"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<link href="index.html#Top" rel="start" title="Top"/>
+<link href="Library-Index.html" rel="index" title="Library Index"/>
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents"/>
+<link href="Enabling-OpenMP.html" rel="next" title="Enabling OpenMP"/>
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+span:hover a.copiable-link {visibility: visible}
+ul.toc-numbered-mark {list-style: none}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://gcc.gnu.org/texinfo-manuals.css"/>
+
+
+</head>
+
+<body lang="en">
+
+
+
+
+
+
+
+<div class="element-shortcontents" id="SEC_Shortcontents">
+<h2 class="shortcontents-heading">Short Table of Contents</h2>
+
+<div class="shortcontents">
+<ul class="toc-numbered-mark">
+<li><a id="stoc-Enabling-OpenMP-1" href="index.html#toc-Enabling-OpenMP-1">1 Enabling OpenMP</a></li>
+<li><a id="stoc-OpenMP-Implementation-Status-1" href="index.html#toc-OpenMP-Implementation-Status-1">2 OpenMP Implementation Status</a></li>
+<li><a id="stoc-OpenMP-Runtime-Library-Routines" href="index.html#toc-OpenMP-Runtime-Library-Routines">3 OpenMP Runtime Library Routines</a></li>
+<li><a id="stoc-OpenMP-Environment-Variables" href="index.html#toc-OpenMP-Environment-Variables">4 OpenMP Environment Variables</a></li>
+<li><a id="stoc-Enabling-OpenACC-1" href="index.html#toc-Enabling-OpenACC-1">5 Enabling OpenACC</a></li>
+<li><a id="stoc-OpenACC-Runtime-Library-Routines-1" href="index.html#toc-OpenACC-Runtime-Library-Routines-1">6 OpenACC Runtime Library Routines</a></li>
+<li><a id="stoc-OpenACC-Environment-Variables-1" href="index.html#toc-OpenACC-Environment-Variables-1">7 OpenACC Environment Variables</a></li>
+<li><a id="stoc-CUDA-Streams-Usage-1" href="index.html#toc-CUDA-Streams-Usage-1">8 CUDA Streams Usage</a></li>
+<li><a id="stoc-OpenACC-Library-Interoperability-1" href="index.html#toc-OpenACC-Library-Interoperability-1">9 OpenACC Library Interoperability</a></li>
+<li><a id="stoc-OpenACC-Profiling-Interface-1" href="index.html#toc-OpenACC-Profiling-Interface-1">10 OpenACC Profiling Interface</a></li>
+<li><a id="stoc-OpenMP-Implementation-Specifics-1" href="index.html#toc-OpenMP-Implementation-Specifics-1">11 OpenMP-Implementation Specifics</a></li>
+<li><a id="stoc-Offload-Target-Specifics-1" href="index.html#toc-Offload-Target-Specifics-1">12 Offload-Target Specifics</a></li>
+<li><a id="stoc-The-libgomp-ABI-1" href="index.html#toc-The-libgomp-ABI-1">13 The libgomp ABI</a></li>
+<li><a id="stoc-Reporting-Bugs-1" href="index.html#toc-Reporting-Bugs-1">14 Reporting Bugs</a></li>
+<li><a id="stoc-GNU-General-Public-License" href="index.html#toc-GNU-General-Public-License">GNU General Public License</a></li>
+<li><a id="stoc-GNU-Free-Documentation-License-1" href="index.html#toc-GNU-Free-Documentation-License-1">GNU Free Documentation License</a></li>
+<li><a id="stoc-Funding-Free-Software" href="index.html#toc-Funding-Free-Software">Funding Free Software</a></li>
+<li><a id="stoc-Library-Index-1" href="index.html#toc-Library-Index-1" rel="index">Library Index</a></li>
+</ul>
+</div>
+</div>
+<div class="element-contents" id="SEC_Contents">
+<h2 class="contents-heading">Table of Contents</h2>
+
+<div class="contents">
+
+<ul class="toc-numbered-mark">
+  <li><a id="toc-Enabling-OpenMP-1" href="Enabling-OpenMP.html">1 Enabling OpenMP</a></li>
+  <li><a id="toc-OpenMP-Implementation-Status-1" href="OpenMP-Implementation-Status.html">2 OpenMP Implementation Status</a>
+  <ul class="toc-numbered-mark">
+    <li><a id="toc-OpenMP-4_002e5-1" href="OpenMP-4_002e5.html">2.1 OpenMP 4.5</a></li>
+    <li><a id="toc-OpenMP-5_002e0-1" href="OpenMP-5_002e0.html">2.2 OpenMP 5.0</a>
+    <ul class="toc-numbered-mark">
+      <li><a id="toc-New-features-listed-in-Appendix-B-of-the-OpenMP-specification" href="OpenMP-5_002e0.html#New-features-listed-in-Appendix-B-of-the-OpenMP-specification">New features listed in Appendix B of the OpenMP specification</a></li>
+      <li><a id="toc-Other-new-OpenMP-5_002e0-features" href="OpenMP-5_002e0.html#Other-new-OpenMP-5_002e0-features">Other new OpenMP 5.0 features</a></li>
+    </ul></li>
+    <li><a id="toc-OpenMP-5_002e1-1" href="OpenMP-5_002e1.html">2.3 OpenMP 5.1</a>
+    <ul class="toc-numbered-mark">
+      <li><a id="toc-New-features-listed-in-Appendix-B-of-the-OpenMP-specification-1" href="OpenMP-5_002e1.html#New-features-listed-in-Appendix-B-of-the-OpenMP-specification-1">New features listed in Appendix B of the OpenMP specification</a></li>
+      <li><a id="toc-Other-new-OpenMP-5_002e1-features" href="OpenMP-5_002e1.html#Other-new-OpenMP-5_002e1-features">Other new OpenMP 5.1 features</a></li>
+    </ul></li>
+    <li><a id="toc-OpenMP-5_002e2-1" href="OpenMP-5_002e2.html">2.4 OpenMP 5.2</a>
+    <ul class="toc-numbered-mark">
+      <li><a id="toc-New-features-listed-in-Appendix-B-of-the-OpenMP-specification-2" href="OpenMP-5_002e2.html#New-features-listed-in-Appendix-B-of-the-OpenMP-specification-2">New features listed in Appendix B of the OpenMP specification</a></li>
+      <li><a id="toc-Other-new-OpenMP-5_002e2-features" href="OpenMP-5_002e2.html#Other-new-OpenMP-5_002e2-features">Other new OpenMP 5.2 features</a></li>
+    </ul></li>
+    <li><a id="toc-OpenMP-Technical-Report-12-1" href="OpenMP-Technical-Report-12.html">2.5 OpenMP Technical Report 12</a>
+    <ul class="toc-numbered-mark">
+      <li><a id="toc-New-features-listed-in-Appendix-B-of-the-OpenMP-specification-3" href="OpenMP-Technical-Report-12.html#New-features-listed-in-Appendix-B-of-the-OpenMP-specification-3">New features listed in Appendix B of the OpenMP specification</a></li>
+      <li><a id="toc-Other-new-TR-12-features" href="OpenMP-Technical-Report-12.html#Other-new-TR-12-features">Other new TR 12 features</a></li>
+    </ul></li>
+  </ul></li>
+  <li><a id="toc-OpenMP-Runtime-Library-Routines" href="Runtime-Library-Routines.html">3 OpenMP Runtime Library Routines</a>
+  <ul class="toc-numbered-mark">
+    <li><a id="toc-Thread-Team-Routines-1" href="Thread-Team-Routines.html">3.1 Thread Team Routines</a>
+    <ul class="toc-numbered-mark">
+      <li><a id="toc-omp_005fset_005fnum_005fthreads----Set-upper-team-size-limit" href="omp_005fset_005fnum_005fthreads.html">3.1.1 <code class="code">omp_set_num_threads</code> &ndash; Set upper team size limit</a></li>
+      <li><a id="toc-omp_005fget_005fnum_005fthreads----Size-of-the-active-team" href="omp_005fget_005fnum_005fthreads.html">3.1.2 <code class="code">omp_get_num_threads</code> &ndash; Size of the active team</a></li>
+      <li><a id="toc-omp_005fget_005fmax_005fthreads----Maximum-number-of-threads-of-parallel-region" href="omp_005fget_005fmax_005fthreads.html">3.1.3 <code class="code">omp_get_max_threads</code> &ndash; Maximum number of threads of parallel region</a></li>
+      <li><a id="toc-omp_005fget_005fthread_005fnum----Current-thread-ID" href="omp_005fget_005fthread_005fnum.html">3.1.4 <code class="code">omp_get_thread_num</code> &ndash; Current thread ID</a></li>
+      <li><a id="toc-omp_005fin_005fparallel----Whether-a-parallel-region-is-active" href="omp_005fin_005fparallel.html">3.1.5 <code class="code">omp_in_parallel</code> &ndash; Whether a parallel region is active</a></li>
+      <li><a id="toc-omp_005fset_005fdynamic----Enable_002fdisable-dynamic-teams" href="omp_005fset_005fdynamic.html">3.1.6 <code class="code">omp_set_dynamic</code> &ndash; Enable/disable dynamic teams</a></li>
+      <li><a id="toc-omp_005fget_005fdynamic----Dynamic-teams-setting" href="omp_005fget_005fdynamic.html">3.1.7 <code class="code">omp_get_dynamic</code> &ndash; Dynamic teams setting</a></li>
+      <li><a id="toc-omp_005fget_005fcancellation----Whether-cancellation-support-is-enabled" href="omp_005fget_005fcancellation.html">3.1.8 <code class="code">omp_get_cancellation</code> &ndash; Whether cancellation support is enabled</a></li>
+      <li><a id="toc-omp_005fset_005fnested----Enable_002fdisable-nested-parallel-regions" href="omp_005fset_005fnested.html">3.1.9 <code class="code">omp_set_nested</code> &ndash; Enable/disable nested parallel regions</a></li>
+      <li><a id="toc-omp_005fget_005fnested----Nested-parallel-regions" href="omp_005fget_005fnested.html">3.1.10 <code class="code">omp_get_nested</code> &ndash; Nested parallel regions</a></li>
+      <li><a id="toc-omp_005fset_005fschedule----Set-the-runtime-scheduling-method" href="omp_005fset_005fschedule.html">3.1.11 <code class="code">omp_set_schedule</code> &ndash; Set the runtime scheduling method</a></li>
+      <li><a id="toc-omp_005fget_005fschedule----Obtain-the-runtime-scheduling-method" href="omp_005fget_005fschedule.html">3.1.12 <code class="code">omp_get_schedule</code> &ndash; Obtain the runtime scheduling method</a></li>
+      <li><a id="toc-omp_005fget_005fteams_005fthread_005flimit----Maximum-number-of-threads-imposed-by-teams" href="omp_005fget_005fteams_005fthread_005flimit.html">3.1.13 <code class="code">omp_get_teams_thread_limit</code> &ndash; Maximum number of threads imposed by teams</a></li>
+      <li><a id="toc-omp_005fget_005fsupported_005factive_005flevels----Maximum-number-of-active-regions-supported" href="omp_005fget_005fsupported_005factive_005flevels.html">3.1.14 <code class="code">omp_get_supported_active_levels</code> &ndash; Maximum number of active regions supported</a></li>
+      <li><a id="toc-omp_005fset_005fmax_005factive_005flevels----Limits-the-number-of-active-parallel-regions" href="omp_005fset_005fmax_005factive_005flevels.html">3.1.15 <code class="code">omp_set_max_active_levels</code> &ndash; Limits the number of active parallel regions</a></li>
+      <li><a id="toc-omp_005fget_005fmax_005factive_005flevels----Current-maximum-number-of-active-regions" href="omp_005fget_005fmax_005factive_005flevels.html">3.1.16 <code class="code">omp_get_max_active_levels</code> &ndash; Current maximum number of active regions</a></li>
+      <li><a id="toc-omp_005fget_005flevel----Obtain-the-current-nesting-level" href="omp_005fget_005flevel.html">3.1.17 <code class="code">omp_get_level</code> &ndash; Obtain the current nesting level</a></li>
+      <li><a id="toc-omp_005fget_005fancestor_005fthread_005fnum----Ancestor-thread-ID" href="omp_005fget_005fancestor_005fthread_005fnum.html">3.1.18 <code class="code">omp_get_ancestor_thread_num</code> &ndash; Ancestor thread ID</a></li>
+      <li><a id="toc-omp_005fget_005fteam_005fsize----Number-of-threads-in-a-team" href="omp_005fget_005fteam_005fsize.html">3.1.19 <code class="code">omp_get_team_size</code> &ndash; Number of threads in a team</a></li>
+      <li><a id="toc-omp_005fget_005factive_005flevel----Number-of-parallel-regions" href="omp_005fget_005factive_005flevel.html">3.1.20 <code class="code">omp_get_active_level</code> &ndash; Number of parallel regions</a></li>
+    </ul></li>
+    <li><a id="toc-Thread-Affinity-Routines-1" href="Thread-Affinity-Routines.html">3.2 Thread Affinity Routines</a>
+    <ul class="toc-numbered-mark">
+      <li><a id="toc-omp_005fget_005fproc_005fbind----Whether-threads-may-be-moved-between-CPUs" href="omp_005fget_005fproc_005fbind.html">3.2.1 <code class="code">omp_get_proc_bind</code> &ndash; Whether threads may be moved between CPUs</a></li>
+    </ul></li>
+    <li><a id="toc-Teams-Region-Routines-1" href="Teams-Region-Routines.html">3.3 Teams Region Routines</a>
+    <ul class="toc-numbered-mark">
+      <li><a id="toc-omp_005fget_005fnum_005fteams----Number-of-teams" href="omp_005fget_005fnum_005fteams.html">3.3.1 <code class="code">omp_get_num_teams</code> &ndash; Number of teams</a></li>
+      <li><a id="toc-omp_005fget_005fteam_005fnum----Get-team-number" href="omp_005fget_005fteam_005fnum.html">3.3.2 <code class="code">omp_get_team_num</code> &ndash; Get team number</a></li>
+      <li><a id="toc-omp_005fset_005fnum_005fteams----Set-upper-teams-limit-for-teams-construct" href="omp_005fset_005fnum_005fteams.html">3.3.3 <code class="code">omp_set_num_teams</code> &ndash; Set upper teams limit for teams construct</a></li>
+      <li><a id="toc-omp_005fget_005fmax_005fteams----Maximum-number-of-teams-of-teams-region" href="omp_005fget_005fmax_005fteams.html">3.3.4 <code class="code">omp_get_max_teams</code> &ndash; Maximum number of teams of teams region</a></li>
+      <li><a id="toc-omp_005fset_005fteams_005fthread_005flimit----Set-upper-thread-limit-for-teams-construct" href="omp_005fset_005fteams_005fthread_005flimit.html">3.3.5 <code class="code">omp_set_teams_thread_limit</code> &ndash; Set upper thread limit for teams construct</a></li>
+      <li><a id="toc-omp_005fget_005fthread_005flimit----Maximum-number-of-threads" href="omp_005fget_005fthread_005flimit.html">3.3.6 <code class="code">omp_get_thread_limit</code> &ndash; Maximum number of threads</a></li>
+    </ul></li>
+    <li><a id="toc-Tasking-Routines-1" href="Tasking-Routines.html">3.4 Tasking Routines</a>
+    <ul class="toc-numbered-mark">
+      <li><a id="toc-omp_005fget_005fmax_005ftask_005fpriority----Maximum-priority-value" href="omp_005fget_005fmax_005ftask_005fpriority.html">3.4.1 <code class="code">omp_get_max_task_priority</code> &ndash; Maximum priority value</a></li>
+      <li><a id="toc-omp_005fin_005fexplicit_005ftask----Whether-a-given-task-is-an-explicit-task" href="omp_005fin_005fexplicit_005ftask.html">3.4.2 <code class="code">omp_in_explicit_task</code> &ndash; Whether a given task is an explicit task</a></li>
+      <li><a id="toc-omp_005fin_005ffinal----Whether-in-final-or-included-task-region" href="omp_005fin_005ffinal.html">3.4.3 <code class="code">omp_in_final</code> &ndash; Whether in final or included task region</a></li>
+    </ul></li>
+    <li><a id="toc-Device-Information-Routines-1" href="Device-Information-Routines.html">3.5 Device Information Routines</a>
+    <ul class="toc-numbered-mark">
+      <li><a id="toc-omp_005fget_005fnum_005fprocs----Number-of-processors-online" href="omp_005fget_005fnum_005fprocs.html">3.5.1 <code class="code">omp_get_num_procs</code> &ndash; Number of processors online</a></li>
+      <li><a id="toc-omp_005fset_005fdefault_005fdevice----Set-the-default-device-for-target-regions" href="omp_005fset_005fdefault_005fdevice.html">3.5.2 <code class="code">omp_set_default_device</code> &ndash; Set the default device for target regions</a></li>
+      <li><a id="toc-omp_005fget_005fdefault_005fdevice----Get-the-default-device-for-target-regions" href="omp_005fget_005fdefault_005fdevice.html">3.5.3 <code class="code">omp_get_default_device</code> &ndash; Get the default device for target regions</a></li>
+      <li><a id="toc-omp_005fget_005fnum_005fdevices----Number-of-target-devices" href="omp_005fget_005fnum_005fdevices.html">3.5.4 <code class="code">omp_get_num_devices</code> &ndash; Number of target devices</a></li>
+      <li><a id="toc-omp_005fget_005fdevice_005fnum----Return-device-number-of-current-device" href="omp_005fget_005fdevice_005fnum.html">3.5.5 <code class="code">omp_get_device_num</code> &ndash; Return device number of current device</a></li>
+      <li><a id="toc-omp_005fis_005finitial_005fdevice----Whether-executing-on-the-host-device" href="omp_005fis_005finitial_005fdevice.html">3.5.6 <code class="code">omp_is_initial_device</code> &ndash; Whether executing on the host device</a></li>
+      <li><a id="toc-omp_005fget_005finitial_005fdevice----Return-device-number-of-initial-device" href="omp_005fget_005finitial_005fdevice.html">3.5.7 <code class="code">omp_get_initial_device</code> &ndash; Return device number of initial device</a></li>
+    </ul></li>
+    <li><a id="toc-Device-Memory-Routines-1" href="Device-Memory-Routines.html">3.6 Device Memory Routines</a>
+    <ul class="toc-numbered-mark">
+      <li><a id="toc-omp_005ftarget_005falloc----Allocate-device-memory" href="omp_005ftarget_005falloc.html">3.6.1 <code class="code">omp_target_alloc</code> &ndash; Allocate device memory</a></li>
+      <li><a id="toc-omp_005ftarget_005ffree----Free-device-memory" href="omp_005ftarget_005ffree.html">3.6.2 <code class="code">omp_target_free</code> &ndash; Free device memory</a></li>
+      <li><a id="toc-omp_005ftarget_005fis_005fpresent----Check-whether-storage-is-mapped" href="omp_005ftarget_005fis_005fpresent.html">3.6.3 <code class="code">omp_target_is_present</code> &ndash; Check whether storage is mapped</a></li>
+      <li><a id="toc-omp_005ftarget_005fassociate_005fptr----Associate-a-device-pointer-with-a-host-pointer" href="omp_005ftarget_005fassociate_005fptr.html">3.6.4 <code class="code">omp_target_associate_ptr</code> &ndash; Associate a device pointer with a host pointer</a></li>
+      <li><a id="toc-omp_005ftarget_005fdisassociate_005fptr----Remove-device--host-pointer-association" href="omp_005ftarget_005fdisassociate_005fptr.html">3.6.5 <code class="code">omp_target_disassociate_ptr</code> &ndash; Remove device&ndash;host pointer association</a></li>
+      <li><a id="toc-omp_005fget_005fmapped_005fptr----Return-device-pointer-to-a-host-pointer" href="omp_005fget_005fmapped_005fptr.html">3.6.6 <code class="code">omp_get_mapped_ptr</code> &ndash; Return device pointer to a host pointer</a></li>
+    </ul></li>
+    <li><a id="toc-Lock-Routines-1" href="Lock-Routines.html">3.7 Lock Routines</a>
+    <ul class="toc-numbered-mark">
+      <li><a id="toc-omp_005finit_005flock----Initialize-simple-lock" href="omp_005finit_005flock.html">3.7.1 <code class="code">omp_init_lock</code> &ndash; Initialize simple lock</a></li>
+      <li><a id="toc-omp_005finit_005fnest_005flock----Initialize-nested-lock" href="omp_005finit_005fnest_005flock.html">3.7.2 <code class="code">omp_init_nest_lock</code> &ndash; Initialize nested lock</a></li>
+      <li><a id="toc-omp_005fdestroy_005flock----Destroy-simple-lock" href="omp_005fdestroy_005flock.html">3.7.3 <code class="code">omp_destroy_lock</code> &ndash; Destroy simple lock</a></li>
+      <li><a id="toc-omp_005fdestroy_005fnest_005flock----Destroy-nested-lock" href="omp_005fdestroy_005fnest_005flock.html">3.7.4 <code class="code">omp_destroy_nest_lock</code> &ndash; Destroy nested lock</a></li>
+      <li><a id="toc-omp_005fset_005flock----Wait-for-and-set-simple-lock" href="omp_005fset_005flock.html">3.7.5 <code class="code">omp_set_lock</code> &ndash; Wait for and set simple lock</a></li>
+      <li><a id="toc-omp_005fset_005fnest_005flock----Wait-for-and-set-nested-lock" href="omp_005fset_005fnest_005flock.html">3.7.6 <code class="code">omp_set_nest_lock</code> &ndash; Wait for and set nested lock</a></li>
+      <li><a id="toc-omp_005funset_005flock----Unset-simple-lock" href="omp_005funset_005flock.html">3.7.7 <code class="code">omp_unset_lock</code> &ndash; Unset simple lock</a></li>
+      <li><a id="toc-omp_005funset_005fnest_005flock----Unset-nested-lock" href="omp_005funset_005fnest_005flock.html">3.7.8 <code class="code">omp_unset_nest_lock</code> &ndash; Unset nested lock</a></li>
+      <li><a id="toc-omp_005ftest_005flock----Test-and-set-simple-lock-if-available" href="omp_005ftest_005flock.html">3.7.9 <code class="code">omp_test_lock</code> &ndash; Test and set simple lock if available</a></li>
+      <li><a id="toc-omp_005ftest_005fnest_005flock----Test-and-set-nested-lock-if-available" href="omp_005ftest_005fnest_005flock.html">3.7.10 <code class="code">omp_test_nest_lock</code> &ndash; Test and set nested lock if available</a></li>
+    </ul></li>
+    <li><a id="toc-Timing-Routines-1" href="Timing-Routines.html">3.8 Timing Routines</a>
+    <ul class="toc-numbered-mark">
+      <li><a id="toc-omp_005fget_005fwtick----Get-timer-precision" href="omp_005fget_005fwtick.html">3.8.1 <code class="code">omp_get_wtick</code> &ndash; Get timer precision</a></li>
+      <li><a id="toc-omp_005fget_005fwtime----Elapsed-wall-clock-time" href="omp_005fget_005fwtime.html">3.8.2 <code class="code">omp_get_wtime</code> &ndash; Elapsed wall clock time</a></li>
+    </ul></li>
+    <li><a id="toc-Event-Routine-1" href="Event-Routine.html">3.9 Event Routine</a>
+    <ul class="toc-numbered-mark">
+      <li><a id="toc-omp_005ffulfill_005fevent----Fulfill-and-destroy-an-OpenMP-event" href="omp_005ffulfill_005fevent.html">3.9.1 <code class="code">omp_fulfill_event</code> &ndash; Fulfill and destroy an OpenMP event</a></li>
+    </ul></li>
+    <li><a id="toc-Memory-Management-Routines-1" href="Memory-Management-Routines.html">3.10 Memory Management Routines</a>
+    <ul class="toc-numbered-mark">
+      <li><a id="toc-omp_005finit_005fallocator----Create-an-allocator" href="omp_005finit_005fallocator.html">3.10.1 <code class="code">omp_init_allocator</code> &ndash; Create an allocator</a></li>
+      <li><a id="toc-omp_005fdestroy_005fallocator----Destroy-an-allocator" href="omp_005fdestroy_005fallocator.html">3.10.2 <code class="code">omp_destroy_allocator</code> &ndash; Destroy an allocator</a></li>
+      <li><a id="toc-omp_005fset_005fdefault_005fallocator----Set-the-default-allocator" href="omp_005fset_005fdefault_005fallocator.html">3.10.3 <code class="code">omp_set_default_allocator</code> &ndash; Set the default allocator</a></li>
+      <li><a id="toc-omp_005fget_005fdefault_005fallocator----Get-the-default-allocator" href="omp_005fget_005fdefault_005fallocator.html">3.10.4 <code class="code">omp_get_default_allocator</code> &ndash; Get the default allocator</a></li>
+      <li><a id="toc-omp_005falloc----Memory-allocation-with-an-allocator" href="omp_005falloc.html">3.10.5 <code class="code">omp_alloc</code> &ndash; Memory allocation with an allocator</a></li>
+      <li><a id="toc-omp_005faligned_005falloc----Memory-allocation-with-an-allocator-and-alignment" href="omp_005faligned_005falloc.html">3.10.6 <code class="code">omp_aligned_alloc</code> &ndash; Memory allocation with an allocator and alignment</a></li>
+      <li><a id="toc-omp_005ffree----Freeing-memory-allocated-with-OpenMP-routines" href="omp_005ffree.html">3.10.7 <code class="code">omp_free</code> &ndash; Freeing memory allocated with OpenMP routines</a></li>
+      <li><a id="toc-omp_005fcalloc----Allocate-nullified-memory-with-an-allocator" href="omp_005fcalloc.html">3.10.8 <code class="code">omp_calloc</code> &ndash; Allocate nullified memory with an allocator</a></li>
+      <li><a id="toc-omp_005faligned_005fcalloc----Allocate-aligned-nullified-memory-with-an-allocator" href="omp_005faligned_005fcalloc.html">3.10.9 <code class="code">omp_aligned_calloc</code> &ndash; Allocate aligned nullified memory with an allocator</a></li>
+      <li><a id="toc-omp_005frealloc----Reallocate-memory-allocated-with-OpenMP-routines" href="omp_005frealloc.html">3.10.10 <code class="code">omp_realloc</code> &ndash; Reallocate memory allocated with OpenMP routines</a></li>
+    </ul></li>
+  </ul></li>
+  <li><a id="toc-OpenMP-Environment-Variables" href="Environment-Variables.html">4 OpenMP Environment Variables</a>
+  <ul class="toc-numbered-mark">
+    <li><a id="toc-OMP_005fALLOCATOR----Set-the-default-allocator" href="OMP_005fALLOCATOR.html">4.1 <code class="env">OMP_ALLOCATOR</code> &ndash; Set the default allocator</a></li>
+    <li><a id="toc-OMP_005fAFFINITY_005fFORMAT----Set-the-format-string-used-for-affinity-display" href="OMP_005fAFFINITY_005fFORMAT.html">4.2 <code class="env">OMP_AFFINITY_FORMAT</code> &ndash; Set the format string used for affinity display</a></li>
+    <li><a id="toc-OMP_005fCANCELLATION----Set-whether-cancellation-is-activated" href="OMP_005fCANCELLATION.html">4.3 <code class="env">OMP_CANCELLATION</code> &ndash; Set whether cancellation is activated</a></li>
+    <li><a id="toc-OMP_005fDISPLAY_005fAFFINITY----Display-thread-affinity-information" href="OMP_005fDISPLAY_005fAFFINITY.html">4.4 <code class="env">OMP_DISPLAY_AFFINITY</code> &ndash; Display thread affinity information</a></li>
+    <li><a id="toc-OMP_005fDISPLAY_005fENV----Show-OpenMP-version-and-environment-variables" href="OMP_005fDISPLAY_005fENV.html">4.5 <code class="env">OMP_DISPLAY_ENV</code> &ndash; Show OpenMP version and environment variables</a></li>
+    <li><a id="toc-OMP_005fDEFAULT_005fDEVICE----Set-the-device-used-in-target-regions" href="OMP_005fDEFAULT_005fDEVICE.html">4.6 <code class="env">OMP_DEFAULT_DEVICE</code> &ndash; Set the device used in target regions</a></li>
+    <li><a id="toc-OMP_005fDYNAMIC----Dynamic-adjustment-of-threads" href="OMP_005fDYNAMIC.html">4.7 <code class="env">OMP_DYNAMIC</code> &ndash; Dynamic adjustment of threads</a></li>
+    <li><a id="toc-OMP_005fMAX_005fACTIVE_005fLEVELS----Set-the-maximum-number-of-nested-parallel-regions" href="OMP_005fMAX_005fACTIVE_005fLEVELS.html">4.8 <code class="env">OMP_MAX_ACTIVE_LEVELS</code> &ndash; Set the maximum number of nested parallel regions</a></li>
+    <li><a id="toc-OMP_005fMAX_005fTASK_005fPRIORITY----Set-the-maximum-priority" href="OMP_005fMAX_005fTASK_005fPRIORITY.html">4.9 <code class="env">OMP_MAX_TASK_PRIORITY</code> &ndash; Set the maximum priority</a></li>
+    <li><a id="toc-OMP_005fNESTED----Nested-parallel-regions" href="OMP_005fNESTED.html">4.10 <code class="env">OMP_NESTED</code> &ndash; Nested parallel regions</a></li>
+    <li><a id="toc-OMP_005fNUM_005fTEAMS----Specifies-the-number-of-teams-to-use-by-teams-region" href="OMP_005fNUM_005fTEAMS.html">4.11 <code class="env">OMP_NUM_TEAMS</code> &ndash; Specifies the number of teams to use by teams region</a></li>
+    <li><a id="toc-OMP_005fNUM_005fTHREADS----Specifies-the-number-of-threads-to-use" href="OMP_005fNUM_005fTHREADS.html">4.12 <code class="env">OMP_NUM_THREADS</code> &ndash; Specifies the number of threads to use</a></li>
+    <li><a id="toc-OMP_005fPROC_005fBIND----Whether-threads-may-be-moved-between-CPUs" href="OMP_005fPROC_005fBIND.html">4.13 <code class="env">OMP_PROC_BIND</code> &ndash; Whether threads may be moved between CPUs</a></li>
+    <li><a id="toc-OMP_005fPLACES----Specifies-on-which-CPUs-the-threads-should-be-placed" href="OMP_005fPLACES.html">4.14 <code class="env">OMP_PLACES</code> &ndash; Specifies on which CPUs the threads should be placed</a></li>
+    <li><a id="toc-OMP_005fSTACKSIZE----Set-default-thread-stack-size" href="OMP_005fSTACKSIZE.html">4.15 <code class="env">OMP_STACKSIZE</code> &ndash; Set default thread stack size</a></li>
+    <li><a id="toc-OMP_005fSCHEDULE----How-threads-are-scheduled" href="OMP_005fSCHEDULE.html">4.16 <code class="env">OMP_SCHEDULE</code> &ndash; How threads are scheduled</a></li>
+    <li><a id="toc-OMP_005fTARGET_005fOFFLOAD----Controls-offloading-behavior" href="OMP_005fTARGET_005fOFFLOAD.html">4.17 <code class="env">OMP_TARGET_OFFLOAD</code> &ndash; Controls offloading behavior</a></li>
+    <li><a id="toc-OMP_005fTEAMS_005fTHREAD_005fLIMIT----Set-the-maximum-number-of-threads-imposed-by-teams" href="OMP_005fTEAMS_005fTHREAD_005fLIMIT.html">4.18 <code class="env">OMP_TEAMS_THREAD_LIMIT</code> &ndash; Set the maximum number of threads imposed by teams</a></li>
+    <li><a id="toc-OMP_005fTHREAD_005fLIMIT----Set-the-maximum-number-of-threads" href="OMP_005fTHREAD_005fLIMIT.html">4.19 <code class="env">OMP_THREAD_LIMIT</code> &ndash; Set the maximum number of threads</a></li>
+    <li><a id="toc-OMP_005fWAIT_005fPOLICY----How-waiting-threads-are-handled" href="OMP_005fWAIT_005fPOLICY.html">4.20 <code class="env">OMP_WAIT_POLICY</code> &ndash; How waiting threads are handled</a></li>
+    <li><a id="toc-GOMP_005fCPU_005fAFFINITY----Bind-threads-to-specific-CPUs" href="GOMP_005fCPU_005fAFFINITY.html">4.21 <code class="env">GOMP_CPU_AFFINITY</code> &ndash; Bind threads to specific CPUs</a></li>
+    <li><a id="toc-GOMP_005fDEBUG----Enable-debugging-output" href="GOMP_005fDEBUG.html">4.22 <code class="env">GOMP_DEBUG</code> &ndash; Enable debugging output</a></li>
+    <li><a id="toc-GOMP_005fSTACKSIZE----Set-default-thread-stack-size" href="GOMP_005fSTACKSIZE.html">4.23 <code class="env">GOMP_STACKSIZE</code> &ndash; Set default thread stack size</a></li>
+    <li><a id="toc-GOMP_005fSPINCOUNT----Set-the-busy-wait-spin-count" href="GOMP_005fSPINCOUNT.html">4.24 <code class="env">GOMP_SPINCOUNT</code> &ndash; Set the busy-wait spin count</a></li>
+    <li><a id="toc-GOMP_005fRTEMS_005fTHREAD_005fPOOLS----Set-the-RTEMS-specific-thread-pools" href="GOMP_005fRTEMS_005fTHREAD_005fPOOLS.html">4.25 <code class="env">GOMP_RTEMS_THREAD_POOLS</code> &ndash; Set the RTEMS specific thread pools</a></li>
+  </ul></li>
+  <li><a id="toc-Enabling-OpenACC-1" href="Enabling-OpenACC.html">5 Enabling OpenACC</a></li>
+  <li><a id="toc-OpenACC-Runtime-Library-Routines-1" href="OpenACC-Runtime-Library-Routines.html">6 OpenACC Runtime Library Routines</a>
+  <ul class="toc-numbered-mark">
+    <li><a id="toc-acc_005fget_005fnum_005fdevices----Get-number-of-devices-for-given-device-type" href="acc_005fget_005fnum_005fdevices.html">6.1 <code class="code">acc_get_num_devices</code> &ndash; Get number of devices for given device type</a></li>
+    <li><a id="toc-acc_005fset_005fdevice_005ftype----Set-type-of-device-accelerator-to-use_002e" href="acc_005fset_005fdevice_005ftype.html">6.2 <code class="code">acc_set_device_type</code> &ndash; Set type of device accelerator to use.</a></li>
+    <li><a id="toc-acc_005fget_005fdevice_005ftype----Get-type-of-device-accelerator-to-be-used_002e" href="acc_005fget_005fdevice_005ftype.html">6.3 <code class="code">acc_get_device_type</code> &ndash; Get type of device accelerator to be used.</a></li>
+    <li><a id="toc-acc_005fset_005fdevice_005fnum----Set-device-number-to-use_002e" href="acc_005fset_005fdevice_005fnum.html">6.4 <code class="code">acc_set_device_num</code> &ndash; Set device number to use.</a></li>
+    <li><a id="toc-acc_005fget_005fdevice_005fnum----Get-device-number-to-be-used_002e" href="acc_005fget_005fdevice_005fnum.html">6.5 <code class="code">acc_get_device_num</code> &ndash; Get device number to be used.</a></li>
+    <li><a id="toc-acc_005fget_005fproperty----Get-device-property_002e" href="acc_005fget_005fproperty.html">6.6 <code class="code">acc_get_property</code> &ndash; Get device property.</a></li>
+    <li><a id="toc-acc_005fasync_005ftest----Test-for-completion-of-a-specific-asynchronous-operation_002e" href="acc_005fasync_005ftest.html">6.7 <code class="code">acc_async_test</code> &ndash; Test for completion of a specific asynchronous operation.</a></li>
+    <li><a id="toc-acc_005fasync_005ftest_005fall----Tests-for-completion-of-all-asynchronous-operations_002e" href="acc_005fasync_005ftest_005fall.html">6.8 <code class="code">acc_async_test_all</code> &ndash; Tests for completion of all asynchronous operations.</a></li>
+    <li><a id="toc-acc_005fwait----Wait-for-completion-of-a-specific-asynchronous-operation_002e" href="acc_005fwait.html">6.9 <code class="code">acc_wait</code> &ndash; Wait for completion of a specific asynchronous operation.</a></li>
+    <li><a id="toc-acc_005fwait_005fall----Waits-for-completion-of-all-asynchronous-operations_002e" href="acc_005fwait_005fall.html">6.10 <code class="code">acc_wait_all</code> &ndash; Waits for completion of all asynchronous operations.</a></li>
+    <li><a id="toc-acc_005fwait_005fall_005fasync----Wait-for-completion-of-all-asynchronous-operations_002e" href="acc_005fwait_005fall_005fasync.html">6.11 <code class="code">acc_wait_all_async</code> &ndash; Wait for completion of all asynchronous operations.</a></li>
+    <li><a id="toc-acc_005fwait_005fasync----Wait-for-completion-of-asynchronous-operations_002e" href="acc_005fwait_005fasync.html">6.12 <code class="code">acc_wait_async</code> &ndash; Wait for completion of asynchronous operations.</a></li>
+    <li><a id="toc-acc_005finit----Initialize-runtime-for-a-specific-device-type_002e" href="acc_005finit.html">6.13 <code class="code">acc_init</code> &ndash; Initialize runtime for a specific device type.</a></li>
+    <li><a id="toc-acc_005fshutdown----Shuts-down-the-runtime-for-a-specific-device-type_002e" href="acc_005fshutdown.html">6.14 <code class="code">acc_shutdown</code> &ndash; Shuts down the runtime for a specific device type.</a></li>
+    <li><a id="toc-acc_005fon_005fdevice----Whether-executing-on-a-particular-device" href="acc_005fon_005fdevice.html">6.15 <code class="code">acc_on_device</code> &ndash; Whether executing on a particular device</a></li>
+    <li><a id="toc-acc_005fmalloc----Allocate-device-memory_002e" href="acc_005fmalloc.html">6.16 <code class="code">acc_malloc</code> &ndash; Allocate device memory.</a></li>
+    <li><a id="toc-acc_005ffree----Free-device-memory_002e" href="acc_005ffree.html">6.17 <code class="code">acc_free</code> &ndash; Free device memory.</a></li>
+    <li><a id="toc-acc_005fcopyin----Allocate-device-memory-and-copy-host-memory-to-it_002e" href="acc_005fcopyin.html">6.18 <code class="code">acc_copyin</code> &ndash; Allocate device memory and copy host memory to it.</a></li>
+    <li><a id="toc-acc_005fpresent_005for_005fcopyin----If-the-data-is-not-present-on-the-device_002c-allocate-device-memory-and-copy-from-host-memory_002e" href="acc_005fpresent_005for_005fcopyin.html">6.19 <code class="code">acc_present_or_copyin</code> &ndash; If the data is not present on the device, allocate device memory and copy from host memory.</a></li>
+    <li><a id="toc-acc_005fcreate----Allocate-device-memory-and-map-it-to-host-memory_002e" href="acc_005fcreate.html">6.20 <code class="code">acc_create</code> &ndash; Allocate device memory and map it to host memory.</a></li>
+    <li><a id="toc-acc_005fpresent_005for_005fcreate----If-the-data-is-not-present-on-the-device_002c-allocate-device-memory-and-map-it-to-host-memory_002e" href="acc_005fpresent_005for_005fcreate.html">6.21 <code class="code">acc_present_or_create</code> &ndash; If the data is not present on the device, allocate device memory and map it to host memory.</a></li>
+    <li><a id="toc-acc_005fcopyout----Copy-device-memory-to-host-memory_002e" href="acc_005fcopyout.html">6.22 <code class="code">acc_copyout</code> &ndash; Copy device memory to host memory.</a></li>
+    <li><a id="toc-acc_005fdelete----Free-device-memory_002e" href="acc_005fdelete.html">6.23 <code class="code">acc_delete</code> &ndash; Free device memory.</a></li>
+    <li><a id="toc-acc_005fupdate_005fdevice----Update-device-memory-from-mapped-host-memory_002e" href="acc_005fupdate_005fdevice.html">6.24 <code class="code">acc_update_device</code> &ndash; Update device memory from mapped host memory.</a></li>
+    <li><a id="toc-acc_005fupdate_005fself----Update-host-memory-from-mapped-device-memory_002e" href="acc_005fupdate_005fself.html">6.25 <code class="code">acc_update_self</code> &ndash; Update host memory from mapped device memory.</a></li>
+    <li><a id="toc-acc_005fmap_005fdata----Map-previously-allocated-device-memory-to-host-memory_002e" href="acc_005fmap_005fdata.html">6.26 <code class="code">acc_map_data</code> &ndash; Map previously allocated device memory to host memory.</a></li>
+    <li><a id="toc-acc_005funmap_005fdata----Unmap-device-memory-from-host-memory_002e" href="acc_005funmap_005fdata.html">6.27 <code class="code">acc_unmap_data</code> &ndash; Unmap device memory from host memory.</a></li>
+    <li><a id="toc-acc_005fdeviceptr----Get-device-pointer-associated-with-specific-host-address_002e" href="acc_005fdeviceptr.html">6.28 <code class="code">acc_deviceptr</code> &ndash; Get device pointer associated with specific host address.</a></li>
+    <li><a id="toc-acc_005fhostptr----Get-host-pointer-associated-with-specific-device-address_002e" href="acc_005fhostptr.html">6.29 <code class="code">acc_hostptr</code> &ndash; Get host pointer associated with specific device address.</a></li>
+    <li><a id="toc-acc_005fis_005fpresent----Indicate-whether-host-variable-_002f-array-is-present-on-device_002e" href="acc_005fis_005fpresent.html">6.30 <code class="code">acc_is_present</code> &ndash; Indicate whether host variable / array is present on device.</a></li>
+    <li><a id="toc-acc_005fmemcpy_005fto_005fdevice----Copy-host-memory-to-device-memory_002e" href="acc_005fmemcpy_005fto_005fdevice.html">6.31 <code class="code">acc_memcpy_to_device</code> &ndash; Copy host memory to device memory.</a></li>
+    <li><a id="toc-acc_005fmemcpy_005ffrom_005fdevice----Copy-device-memory-to-host-memory_002e" href="acc_005fmemcpy_005ffrom_005fdevice.html">6.32 <code class="code">acc_memcpy_from_device</code> &ndash; Copy device memory to host memory.</a></li>
+    <li><a id="toc-acc_005fattach----Let-device-pointer-point-to-device-pointer-target_002e" href="acc_005fattach.html">6.33 <code class="code">acc_attach</code> &ndash; Let device pointer point to device-pointer target.</a></li>
+    <li><a id="toc-acc_005fdetach----Let-device-pointer-point-to-host-pointer-target_002e" href="acc_005fdetach.html">6.34 <code class="code">acc_detach</code> &ndash; Let device pointer point to host-pointer target.</a></li>
+    <li><a id="toc-acc_005fget_005fcurrent_005fcuda_005fdevice----Get-CUDA-device-handle_002e" href="acc_005fget_005fcurrent_005fcuda_005fdevice.html">6.35 <code class="code">acc_get_current_cuda_device</code> &ndash; Get CUDA device handle.</a></li>
+    <li><a id="toc-acc_005fget_005fcurrent_005fcuda_005fcontext----Get-CUDA-context-handle_002e" href="acc_005fget_005fcurrent_005fcuda_005fcontext.html">6.36 <code class="code">acc_get_current_cuda_context</code> &ndash; Get CUDA context handle.</a></li>
+    <li><a id="toc-acc_005fget_005fcuda_005fstream----Get-CUDA-stream-handle_002e" href="acc_005fget_005fcuda_005fstream.html">6.37 <code class="code">acc_get_cuda_stream</code> &ndash; Get CUDA stream handle.</a></li>
+    <li><a id="toc-acc_005fset_005fcuda_005fstream----Set-CUDA-stream-handle_002e" href="acc_005fset_005fcuda_005fstream.html">6.38 <code class="code">acc_set_cuda_stream</code> &ndash; Set CUDA stream handle.</a></li>
+    <li><a id="toc-acc_005fprof_005fregister----Register-callbacks_002e" href="acc_005fprof_005fregister.html">6.39 <code class="code">acc_prof_register</code> &ndash; Register callbacks.</a></li>
+    <li><a id="toc-acc_005fprof_005funregister----Unregister-callbacks_002e" href="acc_005fprof_005funregister.html">6.40 <code class="code">acc_prof_unregister</code> &ndash; Unregister callbacks.</a></li>
+    <li><a id="toc-acc_005fprof_005flookup----Obtain-inquiry-functions_002e" href="acc_005fprof_005flookup.html">6.41 <code class="code">acc_prof_lookup</code> &ndash; Obtain inquiry functions.</a></li>
+    <li><a id="toc-acc_005fregister_005flibrary----Library-registration_002e" href="acc_005fregister_005flibrary.html">6.42 <code class="code">acc_register_library</code> &ndash; Library registration.</a></li>
+  </ul></li>
+  <li><a id="toc-OpenACC-Environment-Variables-1" href="OpenACC-Environment-Variables.html">7 OpenACC Environment Variables</a>
+  <ul class="toc-numbered-mark">
+    <li><a id="toc-ACC_005fDEVICE_005fTYPE-1" href="ACC_005fDEVICE_005fTYPE.html">7.1 <code class="code">ACC_DEVICE_TYPE</code></a></li>
+    <li><a id="toc-ACC_005fDEVICE_005fNUM-1" href="ACC_005fDEVICE_005fNUM.html">7.2 <code class="code">ACC_DEVICE_NUM</code></a></li>
+    <li><a id="toc-ACC_005fPROFLIB-1" href="ACC_005fPROFLIB.html">7.3 <code class="code">ACC_PROFLIB</code></a></li>
+  </ul></li>
+  <li><a id="toc-CUDA-Streams-Usage-1" href="CUDA-Streams-Usage.html">8 CUDA Streams Usage</a></li>
+  <li><a id="toc-OpenACC-Library-Interoperability-1" href="OpenACC-Library-Interoperability.html">9 OpenACC Library Interoperability</a>
+  <ul class="toc-numbered-mark">
+    <li><a id="toc-Introduction-1" href="OpenACC-Library-Interoperability.html#Introduction-1">9.1 Introduction</a></li>
+    <li><a id="toc-First-invocation_003a-NVIDIA-CUBLAS-library-API" href="OpenACC-Library-Interoperability.html#First-invocation_003a-NVIDIA-CUBLAS-library-API">9.2 First invocation: NVIDIA CUBLAS library API</a></li>
+    <li><a id="toc-First-invocation_003a-OpenACC-library-API" href="OpenACC-Library-Interoperability.html#First-invocation_003a-OpenACC-library-API">9.3 First invocation: OpenACC library API</a></li>
+    <li><a id="toc-OpenACC-library-and-environment-variables" href="OpenACC-Library-Interoperability.html#OpenACC-library-and-environment-variables">9.4 OpenACC library and environment variables</a></li>
+  </ul></li>
+  <li><a id="toc-OpenACC-Profiling-Interface-1" href="OpenACC-Profiling-Interface.html">10 OpenACC Profiling Interface</a>
+  <ul class="toc-numbered-mark">
+    <li><a id="toc-Implementation-Status-and-Implementation-Defined-Behavior" href="OpenACC-Profiling-Interface.html#Implementation-Status-and-Implementation-Defined-Behavior">10.1 Implementation Status and Implementation-Defined Behavior</a></li>
+  </ul></li>
+  <li><a id="toc-OpenMP-Implementation-Specifics-1" href="OpenMP-Implementation-Specifics.html">11 OpenMP-Implementation Specifics</a>
+  <ul class="toc-numbered-mark">
+    <li><a id="toc-Implementation-defined-ICV-Initialization-1" href="Implementation-defined-ICV-Initialization.html">11.1 Implementation-defined ICV Initialization</a></li>
+    <li><a id="toc-OpenMP-Context-Selectors-1" href="OpenMP-Context-Selectors.html">11.2 OpenMP Context Selectors</a></li>
+    <li><a id="toc-Memory-allocation-1" href="Memory-allocation.html">11.3 Memory allocation</a></li>
+  </ul></li>
+  <li><a id="toc-Offload-Target-Specifics-1" href="Offload-Target-Specifics.html">12 Offload-Target Specifics</a>
+  <ul class="toc-numbered-mark">
+    <li><a id="toc-AMD-Radeon-_0028GCN_0029" href="AMD-Radeon.html">12.1 AMD Radeon (GCN)</a></li>
+    <li><a id="toc-nvptx-1" href="nvptx.html">12.2 nvptx</a></li>
+  </ul></li>
+  <li><a id="toc-The-libgomp-ABI-1" href="The-libgomp-ABI.html">13 The libgomp ABI</a>
+  <ul class="toc-numbered-mark">
+    <li><a id="toc-Implementing-MASTER-construct-1" href="Implementing-MASTER-construct.html">13.1 Implementing MASTER construct</a></li>
+    <li><a id="toc-Implementing-CRITICAL-construct-1" href="Implementing-CRITICAL-construct.html">13.2 Implementing CRITICAL construct</a></li>
+    <li><a id="toc-Implementing-ATOMIC-construct-1" href="Implementing-ATOMIC-construct.html">13.3 Implementing ATOMIC construct</a></li>
+    <li><a id="toc-Implementing-FLUSH-construct-1" href="Implementing-FLUSH-construct.html">13.4 Implementing FLUSH construct</a></li>
+    <li><a id="toc-Implementing-BARRIER-construct-1" href="Implementing-BARRIER-construct.html">13.5 Implementing BARRIER construct</a></li>
+    <li><a id="toc-Implementing-THREADPRIVATE-construct-1" href="Implementing-THREADPRIVATE-construct.html">13.6 Implementing THREADPRIVATE construct</a></li>
+    <li><a id="toc-Implementing-PRIVATE-clause-1" href="Implementing-PRIVATE-clause.html">13.7 Implementing PRIVATE clause</a></li>
+    <li><a id="toc-Implementing-FIRSTPRIVATE-LASTPRIVATE-COPYIN-and-COPYPRIVATE-clauses-1" href="Implementing-FIRSTPRIVATE-LASTPRIVATE-COPYIN-and-COPYPRIVATE-clauses.html">13.8 Implementing FIRSTPRIVATE LASTPRIVATE COPYIN and COPYPRIVATE clauses</a></li>
+    <li><a id="toc-Implementing-REDUCTION-clause-1" href="Implementing-REDUCTION-clause.html">13.9 Implementing REDUCTION clause</a></li>
+    <li><a id="toc-Implementing-PARALLEL-construct-1" href="Implementing-PARALLEL-construct.html">13.10 Implementing PARALLEL construct</a></li>
+    <li><a id="toc-Implementing-FOR-construct-1" href="Implementing-FOR-construct.html">13.11 Implementing FOR construct</a></li>
+    <li><a id="toc-Implementing-ORDERED-construct-1" href="Implementing-ORDERED-construct.html">13.12 Implementing ORDERED construct</a></li>
+    <li><a id="toc-Implementing-SECTIONS-construct-1" href="Implementing-SECTIONS-construct.html">13.13 Implementing SECTIONS construct</a></li>
+    <li><a id="toc-Implementing-SINGLE-construct-1" href="Implementing-SINGLE-construct.html">13.14 Implementing SINGLE construct</a></li>
+    <li><a id="toc-Implementing-OpenACC_0027s-PARALLEL-construct-1" href="Implementing-OpenACC_0027s-PARALLEL-construct.html">13.15 Implementing OpenACC&rsquo;s PARALLEL construct</a></li>
+  </ul></li>
+  <li><a id="toc-Reporting-Bugs-1" href="Reporting-Bugs.html">14 Reporting Bugs</a></li>
+  <li><a id="toc-GNU-General-Public-License" href="Copying.html">GNU General Public License</a></li>
+  <li><a id="toc-GNU-Free-Documentation-License-1" href="GNU-Free-Documentation-License.html">GNU Free Documentation License</a>
+  <ul class="toc-numbered-mark">
+    <li><a id="toc-ADDENDUM_003a-How-to-use-this-License-for-your-documents" href="GNU-Free-Documentation-License.html#ADDENDUM_003a-How-to-use-this-License-for-your-documents">ADDENDUM: How to use this License for your documents</a></li>
+  </ul></li>
+  <li><a id="toc-Funding-Free-Software" href="Funding.html">Funding Free Software</a></li>
+  <li><a id="toc-Library-Index-1" href="Library-Index.html" rel="index">Library Index</a></li>
+</ul>
+</div>
+</div>
+
+
+<div class="top-level-extent" id="Top">
+<div class="nav-panel">
+<p>
+Next: <a href="Enabling-OpenMP.html" accesskey="n" rel="next">Enabling OpenMP</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr/>
+<h1 class="top" id="Introduction"><span>Introduction<a class="copiable-link" href="index.html#Introduction"> &para;</a></span></h1>
+<a class="index-entry-id" id="index-Introduction"></a>
+
+<p>This manual documents the usage of libgomp, the GNU Offloading and
+Multi Processing Runtime Library.  This includes the GNU
+implementation of the <a class="uref" href="https://www.openmp.org">OpenMP</a> Application
+Programming Interface (API) for multi-platform shared-memory parallel
+programming in C/C++ and Fortran, and the GNU implementation of the
+<a class="uref" href="https://www.openacc.org">OpenACC</a> Application Programming
+Interface (API) for offloading of code to accelerator devices in C/C++
+and Fortran.
+</p>
+<p>Originally, libgomp implemented the GNU OpenMP Runtime Library.  Based
+on this, support for OpenACC and offloading (both OpenACC and OpenMP
+4&rsquo;s target construct) has been added later on, and the library&rsquo;s name
+changed to GNU Offloading and Multi Processing Runtime Library.
+</p>
+
+
+
+
+
+<ul class="mini-toc">
+<li><a href="Enabling-OpenMP.html" accesskey="1">Enabling OpenMP</a></li>
+<li><a href="OpenMP-Implementation-Status.html" accesskey="2">OpenMP Implementation Status</a></li>
+<li><a href="Runtime-Library-Routines.html" accesskey="3">OpenMP Runtime Library Routines</a></li>
+<li><a href="Environment-Variables.html" accesskey="4">OpenMP Environment Variables</a></li>
+<li><a href="Enabling-OpenACC.html" accesskey="5">Enabling OpenACC</a></li>
+<li><a href="OpenACC-Runtime-Library-Routines.html" accesskey="6">OpenACC Runtime Library Routines</a></li>
+<li><a href="OpenACC-Environment-Variables.html" accesskey="7">OpenACC Environment Variables</a></li>
+<li><a href="CUDA-Streams-Usage.html" accesskey="8">CUDA Streams Usage</a></li>
+<li><a href="OpenACC-Library-Interoperability.html" accesskey="9">OpenACC Library Interoperability</a></li>
+<li><a href="OpenACC-Profiling-Interface.html">OpenACC Profiling Interface</a></li>
+<li><a href="OpenMP-Implementation-Specifics.html">OpenMP-Implementation Specifics</a></li>
+<li><a href="Offload-Target-Specifics.html">Offload-Target Specifics</a></li>
+<li><a href="The-libgomp-ABI.html">The libgomp ABI</a></li>
+<li><a href="Reporting-Bugs.html">Reporting Bugs</a></li>
+<li><a href="Copying.html">GNU General Public License</a></li>
+<li><a href="GNU-Free-Documentation-License.html">GNU Free Documentation License</a></li>
+<li><a href="Funding.html">Funding Free Software</a></li>
+<li><a href="Library-Index.html">Library Index</a></li>
+</ul>
+</div>
+<hr/>
+<div class="nav-panel">
+<p>
+Next: <a href="Enabling-OpenMP.html" accesskey="n" rel="next">Enabling OpenMP</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+
+
+
+
+
+</body></html>

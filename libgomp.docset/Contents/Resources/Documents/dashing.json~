@@ -1,0 +1,15 @@
+{
+    "name": "Openmp of GCC",
+    "package": "libgomp",
+    "index": "Index.html",
+    "ExternalURL": "https://gcc.gnu.org/onlinedocs/libgomp/",
+    "selectors": {
+        "dt a": "Command",
+        "title": "Package"
+    },
+    "ignore": [
+        "ABOUT"
+    ],
+    "icon32x32": "/home/xy163/Downloads/openmp_icon.png",
+    "allowJS": false
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html><html><!-- Created by GNU Texinfo 7.0dev, http://www.gnu.org/software/texinfo/ --><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!-- Copyright &copy; 2006-2023 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with the
+Invariant Sections being "Funding Free Software", the Front-Cover
+texts being (a) (see below), and with the Back-Cover Texts being (b)
+(see below).  A copy of the license is included in the section entitled
+"GNU Free Documentation License".
+
+(a) The FSF's Front-Cover Text is:
+
+A GNU Manual
+
+(b) The FSF's Back-Cover Text is:
+
+You have freedom to copy and modify this GNU Manual, like GNU
+     software.  Copies published by the Free Software Foundation raise
+     funds for GNU development. -->
+<a class="dashingAutolink" name="autolink-39"></a><a class="dashAnchor" name="//apple_ref/cpp/Package/OMP_AFFINITY_FORMAT%20%28GNU%20libgomp%29"></a><title>OMP_AFFINITY_FORMAT (GNU libgomp)</title>
+
+<meta name="description" content="OMP_AFFINITY_FORMAT (GNU libgomp)"/>
+<meta name="keywords" content="OMP_AFFINITY_FORMAT (GNU libgomp)"/>
+<meta name="resource-type" content="document"/>
+<meta name="distribution" content="global"/>
+<meta name="Generator" content="makeinfo"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<link href="index.html" rel="start" title="Top"/>
+<link href="Library-Index.html" rel="index" title="Library Index"/>
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents"/>
+<link href="Environment-Variables.html" rel="up" title="Environment Variables"/>
+<link href="OMP_005fCANCELLATION.html" rel="next" title="OMP_CANCELLATION"/>
+<link href="OMP_005fALLOCATOR.html" rel="prev" title="OMP_ALLOCATOR"/>
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+div.example {margin-left: 3.2em}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://gcc.gnu.org/texinfo-manuals.css"/>
+
+
+</head>
+
+<body lang="en">
+<div class="section-level-extent" id="OMP_005fAFFINITY_005fFORMAT">
+<div class="nav-panel">
+<p>
+Next: <a href="OMP_005fCANCELLATION.html" accesskey="n" rel="next"><code class="env">OMP_CANCELLATION</code> &ndash; Set whether cancellation is activated</a>, Previous: <a href="OMP_005fALLOCATOR.html" accesskey="p" rel="prev"><code class="env">OMP_ALLOCATOR</code> &ndash; Set the default allocator</a>, Up: <a href="Environment-Variables.html" accesskey="u" rel="up">OpenMP Environment Variables</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr/>
+<h3 class="section" id="OMP_005fAFFINITY_005fFORMAT----Set-the-format-string-used-for-affinity-display"><span>4.2 <code class="env">OMP_AFFINITY_FORMAT</code> &ndash; Set the format string used for affinity display<a class="copiable-link" href="OMP_005fAFFINITY_005fFORMAT.html#OMP_005fAFFINITY_005fFORMAT----Set-the-format-string-used-for-affinity-display"> &para;</a></span></h3>
+<a class="index-entry-id" id="index-Environment-Variable-1"></a>
+<dl class="table">
+<dt><em class="emph">ICV:</em> <var class="var">affinity-format-var</var></dt>
+<dt><em class="emph">Scope:</em> device</dt>
+<dt><em class="emph">Description</em>:</dt>
+<dd><p>Sets the format string used when displaying OpenMP thread affinity information.
+Special values are output using <code class="code">%</code> followed by an optional size
+specification and then either the single-character field type or its long
+name enclosed in curly braces; using <code class="code">%%</code> displays a literal percent.
+The size specification consists of an optional <code class="code">0.</code> or <code class="code">.</code> followed
+by a positive integer, specifying the minimal width of the output.  With
+<code class="code">0.</code> and numerical values, the output is padded with zeros on the left;
+with <code class="code">.</code>, the output is padded by spaces on the left; otherwise, the
+output is padded by spaces on the right.  If unset, the value is
+&ldquo;<code class="code">level %L thread %i affinity %A</code>&rdquo;.
+</p>
+<p>Supported field types are:
+</p>
+<table class="multitable">
+<tbody><tr><td width="10%">t</td><td width="25%">team_num</td><td width="60%">value returned by <code class="code">omp_get_team_num</code></td></tr>
+<tr><td width="10%">T</td><td width="25%">num_teams</td><td width="60%">value returned by <code class="code">omp_get_num_teams</code></td></tr>
+<tr><td width="10%">L</td><td width="25%">nesting_level</td><td width="60%">value returned by <code class="code">omp_get_level</code></td></tr>
+<tr><td width="10%">n</td><td width="25%">thread_num</td><td width="60%">value returned by <code class="code">omp_get_thread_num</code></td></tr>
+<tr><td width="10%">N</td><td width="25%">num_threads</td><td width="60%">value returned by <code class="code">omp_get_num_threads</code></td></tr>
+<tr><td width="10%">a</td><td width="25%">ancestor_tnum</td><td width="60%">value returned by
+           <code class="code">omp_get_ancestor_thread_num(omp_get_level()-1)</code></td></tr>
+<tr><td width="10%">H</td><td width="25%">host</td><td width="60%">name of the host that executes the thread</td></tr>
+<tr><td width="10%">P</td><td width="25%">process_id</td><td width="60%">process identifier</td></tr>
+<tr><td width="10%">i</td><td width="25%">native_thread_id</td><td width="60%">native thread identifier</td></tr>
+<tr><td width="10%">A</td><td width="25%">thread_affinity</td><td width="60%">comma separated list of integer values or ranges, representing the
+           processors on which a process might execute, subject to affinity
+           mechanisms</td></tr>
+</tbody>
+</table>
+
+<p>For instance, after setting
+</p>
+<div class="example smallexample">
+<pre class="example-preformatted">OMP_AFFINITY_FORMAT=&#34;%0.2a!%n!%.4L!%N;%.2t;%0.2T;%{team_num};%{num_teams};%A&#34;
+</pre></div>
+
+<p>with either <code class="code">OMP_DISPLAY_AFFINITY</code> being set or when calling
+<code class="code">omp_display_affinity</code> with <code class="code">NULL</code> or an empty string, the program
+might display the following:
+</p>
+<div class="example smallexample">
+<pre class="example-preformatted">00!0!   1!4; 0;01;0;1;0-11
+00!3!   1!4; 0;01;0;1;0-11
+00!2!   1!4; 0;01;0;1;0-11
+00!1!   1!4; 0;01;0;1;0-11
+</pre></div>
+
+</dd>
+<dt><em class="emph">See also</em>:</dt>
+<dd><p><a class="ref" href="OMP_005fDISPLAY_005fAFFINITY.html"><code class="env">OMP_DISPLAY_AFFINITY</code> &ndash; Display thread affinity information</a>
+</p>
+</dd>
+<dt><em class="emph">Reference</em>:</dt>
+<dd><p><a class="uref" href="https://www.openmp.org">OpenMP specification v5.0</a>, Section 6.14
+</p></dd>
+</dl>
+
+
+
+</div>
+<hr/>
+<div class="nav-panel">
+<p>
+Next: <a href="OMP_005fCANCELLATION.html"><code class="env">OMP_CANCELLATION</code> &ndash; Set whether cancellation is activated</a>, Previous: <a href="OMP_005fALLOCATOR.html"><code class="env">OMP_ALLOCATOR</code> &ndash; Set the default allocator</a>, Up: <a href="Environment-Variables.html">OpenMP Environment Variables</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+
+
+
+
+
+</body></html>

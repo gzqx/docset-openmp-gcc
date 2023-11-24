@@ -1,0 +1,95 @@
+<!DOCTYPE html><html><!-- Created by GNU Texinfo 7.0dev, http://www.gnu.org/software/texinfo/ --><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!-- Copyright &copy; 2006-2023 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with the
+Invariant Sections being "Funding Free Software", the Front-Cover
+texts being (a) (see below), and with the Back-Cover Texts being (b)
+(see below).  A copy of the license is included in the section entitled
+"GNU Free Documentation License".
+
+(a) The FSF's Front-Cover Text is:
+
+A GNU Manual
+
+(b) The FSF's Back-Cover Text is:
+
+You have freedom to copy and modify this GNU Manual, like GNU
+     software.  Copies published by the Free Software Foundation raise
+     funds for GNU development. -->
+<a class="dashingAutolink" name="autolink-177"></a><a class="dashAnchor" name="//apple_ref/cpp/Package/omp_set_num_teams%20%28GNU%20libgomp%29"></a><title>omp_set_num_teams (GNU libgomp)</title>
+
+<meta name="description" content="omp_set_num_teams (GNU libgomp)"/>
+<meta name="keywords" content="omp_set_num_teams (GNU libgomp)"/>
+<meta name="resource-type" content="document"/>
+<meta name="distribution" content="global"/>
+<meta name="Generator" content="makeinfo"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<link href="index.html" rel="start" title="Top"/>
+<link href="Library-Index.html" rel="index" title="Library Index"/>
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents"/>
+<link href="Teams-Region-Routines.html" rel="up" title="Teams Region Routines"/>
+<link href="omp_005fget_005fmax_005fteams.html" rel="next" title="omp_get_max_teams"/>
+<link href="omp_005fget_005fteam_005fnum.html" rel="prev" title="omp_get_team_num"/>
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://gcc.gnu.org/texinfo-manuals.css"/>
+
+
+</head>
+
+<body lang="en">
+<div class="subsection-level-extent" id="omp_005fset_005fnum_005fteams">
+<div class="nav-panel">
+<p>
+Next: <a href="omp_005fget_005fmax_005fteams.html" accesskey="n" rel="next"><code class="code">omp_get_max_teams</code> &ndash; Maximum number of teams of teams region</a>, Previous: <a href="omp_005fget_005fteam_005fnum.html" accesskey="p" rel="prev"><code class="code">omp_get_team_num</code> &ndash; Get team number</a>, Up: <a href="Teams-Region-Routines.html" accesskey="u" rel="up">Teams Region Routines</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr/>
+<h4 class="subsection" id="omp_005fset_005fnum_005fteams----Set-upper-teams-limit-for-teams-construct"><span>3.3.3 <code class="code">omp_set_num_teams</code> &ndash; Set upper teams limit for teams construct<a class="copiable-link" href="omp_005fset_005fnum_005fteams.html#omp_005fset_005fnum_005fteams----Set-upper-teams-limit-for-teams-construct"> &para;</a></span></h4>
+<dl class="table">
+<dt><em class="emph">Description</em>:</dt>
+<dd><p>Specifies the upper bound for number of teams created by the teams construct
+which does not specify a <code class="code">num_teams</code> clause.  The
+argument of <code class="code">omp_set_num_teams</code> shall be a positive integer.
+</p>
+</dd>
+<dt><em class="emph">C/C++</em>:</dt>
+<dd><table class="multitable">
+<tbody><tr><td width="20%"><em class="emph">Prototype</em>:</td><td width="80%"><code class="code">void omp_set_num_teams(int num_teams);</code></td></tr>
+</tbody>
+</table>
+
+</dd>
+<dt><em class="emph">Fortran</em>:</dt>
+<dd><table class="multitable">
+<tbody><tr><td width="20%"><em class="emph">Interface</em>:</td><td width="80%"><code class="code">subroutine omp_set_num_teams(num_teams)</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">integer, intent(in) :: num_teams</code></td></tr>
+</tbody>
+</table>
+
+</dd>
+<dt><em class="emph">See also</em>:</dt>
+<dd><p><a class="ref" href="OMP_005fNUM_005fTEAMS.html"><code class="env">OMP_NUM_TEAMS</code> &ndash; Specifies the number of teams to use by teams region</a>, <a class="ref" href="omp_005fget_005fnum_005fteams.html"><code class="code">omp_get_num_teams</code> &ndash; Number of teams</a>, <a class="ref" href="omp_005fget_005fmax_005fteams.html"><code class="code">omp_get_max_teams</code> &ndash; Maximum number of teams of teams region</a>
+</p>
+</dd>
+<dt><em class="emph">Reference</em>:</dt>
+<dd><p><a class="uref" href="https://www.openmp.org">OpenMP specification v5.1</a>, Section 3.4.3.
+</p></dd>
+</dl>
+
+
+
+</div>
+
+
+
+
+
+</body></html>

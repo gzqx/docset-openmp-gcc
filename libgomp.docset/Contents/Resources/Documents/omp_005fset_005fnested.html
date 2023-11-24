@@ -1,0 +1,104 @@
+<!DOCTYPE html><html><!-- Created by GNU Texinfo 7.0dev, http://www.gnu.org/software/texinfo/ --><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!-- Copyright &copy; 2006-2023 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with the
+Invariant Sections being "Funding Free Software", the Front-Cover
+texts being (a) (see below), and with the Back-Cover Texts being (b)
+(see below).  A copy of the license is included in the section entitled
+"GNU Free Documentation License".
+
+(a) The FSF's Front-Cover Text is:
+
+A GNU Manual
+
+(b) The FSF's Back-Cover Text is:
+
+You have freedom to copy and modify this GNU Manual, like GNU
+     software.  Copies published by the Free Software Foundation raise
+     funds for GNU development. -->
+<a class="dashingAutolink" name="autolink-176"></a><a class="dashAnchor" name="//apple_ref/cpp/Package/omp_set_nested%20%28GNU%20libgomp%29"></a><title>omp_set_nested (GNU libgomp)</title>
+
+<meta name="description" content="omp_set_nested (GNU libgomp)"/>
+<meta name="keywords" content="omp_set_nested (GNU libgomp)"/>
+<meta name="resource-type" content="document"/>
+<meta name="distribution" content="global"/>
+<meta name="Generator" content="makeinfo"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<link href="index.html" rel="start" title="Top"/>
+<link href="Library-Index.html" rel="index" title="Library Index"/>
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents"/>
+<link href="Thread-Team-Routines.html" rel="up" title="Thread Team Routines"/>
+<link href="omp_005fget_005fnested.html" rel="next" title="omp_get_nested"/>
+<link href="omp_005fget_005fcancellation.html" rel="prev" title="omp_get_cancellation"/>
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://gcc.gnu.org/texinfo-manuals.css"/>
+
+
+</head>
+
+<body lang="en">
+<div class="subsection-level-extent" id="omp_005fset_005fnested">
+<div class="nav-panel">
+<p>
+Next: <a href="omp_005fget_005fnested.html" accesskey="n" rel="next"><code class="code">omp_get_nested</code> &ndash; Nested parallel regions</a>, Previous: <a href="omp_005fget_005fcancellation.html" accesskey="p" rel="prev"><code class="code">omp_get_cancellation</code> &ndash; Whether cancellation support is enabled</a>, Up: <a href="Thread-Team-Routines.html" accesskey="u" rel="up">Thread Team Routines</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr/>
+<h4 class="subsection" id="omp_005fset_005fnested----Enable_002fdisable-nested-parallel-regions"><span>3.1.9 <code class="code">omp_set_nested</code> &ndash; Enable/disable nested parallel regions<a class="copiable-link" href="omp_005fset_005fnested.html#omp_005fset_005fnested----Enable_002fdisable-nested-parallel-regions"> &para;</a></span></h4>
+<dl class="table">
+<dt><em class="emph">Description</em>:</dt>
+<dd><p>Enable or disable nested parallel regions, i.e., whether team members
+are allowed to create new teams.  The function takes the language-specific
+equivalent of <code class="code">true</code> and <code class="code">false</code>, where <code class="code">true</code> enables 
+dynamic adjustment of team sizes and <code class="code">false</code> disables it.
+</p>
+<p>Enabling nested parallel regions also sets the maximum number of
+active nested regions to the maximum supported.  Disabling nested parallel
+regions sets the maximum number of active nested regions to one.
+</p>
+<p>Note that the <code class="code">omp_set_nested</code> API routine was deprecated
+in the OpenMP specification 5.2 in favor of <code class="code">omp_set_max_active_levels</code>.
+</p>
+</dd>
+<dt><em class="emph">C/C++</em>:</dt>
+<dd><table class="multitable">
+<tbody><tr><td width="20%"><em class="emph">Prototype</em>:</td><td width="80%"><code class="code">void omp_set_nested(int nested);</code></td></tr>
+</tbody>
+</table>
+
+</dd>
+<dt><em class="emph">Fortran</em>:</dt>
+<dd><table class="multitable">
+<tbody><tr><td width="20%"><em class="emph">Interface</em>:</td><td width="80%"><code class="code">subroutine omp_set_nested(nested)</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">logical, intent(in) :: nested</code></td></tr>
+</tbody>
+</table>
+
+</dd>
+<dt><em class="emph">See also</em>:</dt>
+<dd><p><a class="ref" href="omp_005fget_005fnested.html"><code class="code">omp_get_nested</code> &ndash; Nested parallel regions</a>, <a class="ref" href="omp_005fset_005fmax_005factive_005flevels.html"><code class="code">omp_set_max_active_levels</code> &ndash; Limits the number of active parallel regions</a>,
+<a class="ref" href="OMP_005fMAX_005fACTIVE_005fLEVELS.html"><code class="env">OMP_MAX_ACTIVE_LEVELS</code> &ndash; Set the maximum number of nested parallel regions</a>, <a class="ref" href="OMP_005fNESTED.html"><code class="env">OMP_NESTED</code> &ndash; Nested parallel regions</a>
+</p>
+</dd>
+<dt><em class="emph">Reference</em>:</dt>
+<dd><p><a class="uref" href="https://www.openmp.org">OpenMP specification v4.5</a>, Section 3.2.10.
+</p></dd>
+</dl>
+
+
+
+</div>
+
+
+
+
+
+</body></html>

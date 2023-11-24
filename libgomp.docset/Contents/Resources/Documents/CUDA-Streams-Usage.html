@@ -1,0 +1,113 @@
+<!DOCTYPE html><html><!-- Created by GNU Texinfo 7.0dev, http://www.gnu.org/software/texinfo/ --><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!-- Copyright &copy; 2006-2023 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with the
+Invariant Sections being "Funding Free Software", the Front-Cover
+texts being (a) (see below), and with the Back-Cover Texts being (b)
+(see below).  A copy of the license is included in the section entitled
+"GNU Free Documentation License".
+
+(a) The FSF's Front-Cover Text is:
+
+A GNU Manual
+
+(b) The FSF's Back-Cover Text is:
+
+You have freedom to copy and modify this GNU Manual, like GNU
+     software.  Copies published by the Free Software Foundation raise
+     funds for GNU development. -->
+<a class="dashingAutolink" name="autolink-4"></a><a class="dashAnchor" name="//apple_ref/cpp/Package/CUDA%20Streams%20Usage%20%28GNU%20libgomp%29"></a><title>CUDA Streams Usage (GNU libgomp)</title>
+
+<meta name="description" content="CUDA Streams Usage (GNU libgomp)"/>
+<meta name="keywords" content="CUDA Streams Usage (GNU libgomp)"/>
+<meta name="resource-type" content="document"/>
+<meta name="distribution" content="global"/>
+<meta name="Generator" content="makeinfo"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<link href="index.html" rel="start" title="Top"/>
+<link href="Library-Index.html" rel="index" title="Library Index"/>
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents"/>
+<link href="index.html" rel="up" title="Top"/>
+<link href="OpenACC-Library-Interoperability.html" rel="next" title="OpenACC Library Interoperability"/>
+<link href="OpenACC-Environment-Variables.html" rel="prev" title="OpenACC Environment Variables"/>
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://gcc.gnu.org/texinfo-manuals.css"/>
+
+
+</head>
+
+<body lang="en">
+<div class="chapter-level-extent" id="CUDA-Streams-Usage">
+<div class="nav-panel">
+<p>
+Next: <a href="OpenACC-Library-Interoperability.html" accesskey="n" rel="next">OpenACC Library Interoperability</a>, Previous: <a href="OpenACC-Environment-Variables.html" accesskey="p" rel="prev">OpenACC Environment Variables</a>, Up: <a href="index.html" accesskey="u" rel="up">Introduction</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr/>
+<h2 class="chapter" id="CUDA-Streams-Usage-1"><span>8 CUDA Streams Usage<a class="copiable-link" href="CUDA-Streams-Usage.html#CUDA-Streams-Usage-1"> &para;</a></span></h2>
+
+<p>This applies to the <code class="code">nvptx</code> plugin only.
+</p>
+<p>The library provides elements that perform asynchronous movement of
+data and asynchronous operation of computing constructs.  This
+asynchronous functionality is implemented by making use of CUDA
+streams<a class="footnote" id="DOCF2" href="CUDA-Streams-Usage.html#FOOT2"><sup>2</sup></a>.
+</p>
+<p>The primary means by that the asynchronous functionality is accessed
+is through the use of those OpenACC directives which make use of the
+<code class="code">async</code> and <code class="code">wait</code> clauses.  When the <code class="code">async</code> clause is
+first used with a directive, it creates a CUDA stream.  If an
+<code class="code">async-argument</code> is used with the <code class="code">async</code> clause, then the
+stream is associated with the specified <code class="code">async-argument</code>.
+</p>
+<p>Following the creation of an association between a CUDA stream and the
+<code class="code">async-argument</code> of an <code class="code">async</code> clause, both the <code class="code">wait</code>
+clause and the <code class="code">wait</code> directive can be used.  When either the
+clause or directive is used after stream creation, it creates a
+rendezvous point whereby execution waits until all operations
+associated with the <code class="code">async-argument</code>, that is, stream, have
+completed.
+</p>
+<p>Normally, the management of the streams that are created as a result of
+using the <code class="code">async</code> clause, is done without any intervention by the
+caller.  This implies the association between the <code class="code">async-argument</code>
+and the CUDA stream is maintained for the lifetime of the program.
+However, this association can be changed through the use of the library
+function <code class="code">acc_set_cuda_stream</code>.  When the function
+<code class="code">acc_set_cuda_stream</code> is called, the CUDA stream that was
+originally associated with the <code class="code">async</code> clause is destroyed.
+Caution should be taken when changing the association as subsequent
+references to the <code class="code">async-argument</code> refer to a different
+CUDA stream.
+</p>
+
+
+
+</div>
+<div class="footnotes-segment">
+<hr/>
+<h4 class="footnotes-heading">Footnotes</h4>
+
+<h5 class="footnote-body-heading"><a id="FOOT2" href="CUDA-Streams-Usage.html#DOCF2">(2)</a></h5>
+<p>See &#34;Stream Management&#34; in &#34;CUDA Driver API&#34;,
+TRM-06703-001, Version 5.5, for additional information</p>
+</div>
+<hr/>
+<div class="nav-panel">
+<p>
+Next: <a href="OpenACC-Library-Interoperability.html">OpenACC Library Interoperability</a>, Previous: <a href="OpenACC-Environment-Variables.html">OpenACC Environment Variables</a>, Up: <a href="index.html">Introduction</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+
+
+
+
+
+</body></html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html><html><!-- Created by GNU Texinfo 7.0dev, http://www.gnu.org/software/texinfo/ --><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!-- Copyright &copy; 2006-2023 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with the
+Invariant Sections being "Funding Free Software", the Front-Cover
+texts being (a) (see below), and with the Back-Cover Texts being (b)
+(see below).  A copy of the license is included in the section entitled
+"GNU Free Documentation License".
+
+(a) The FSF's Front-Cover Text is:
+
+A GNU Manual
+
+(b) The FSF's Back-Cover Text is:
+
+You have freedom to copy and modify this GNU Manual, like GNU
+     software.  Copies published by the Free Software Foundation raise
+     funds for GNU development. -->
+<a class="dashingAutolink" name="autolink-68"></a><a class="dashAnchor" name="//apple_ref/cpp/Package/OpenMP%20Context%20Selectors%20%28GNU%20libgomp%29"></a><title>OpenMP Context Selectors (GNU libgomp)</title>
+
+<meta name="description" content="OpenMP Context Selectors (GNU libgomp)"/>
+<meta name="keywords" content="OpenMP Context Selectors (GNU libgomp)"/>
+<meta name="resource-type" content="document"/>
+<meta name="distribution" content="global"/>
+<meta name="Generator" content="makeinfo"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<link href="index.html" rel="start" title="Top"/>
+<link href="Library-Index.html" rel="index" title="Library Index"/>
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents"/>
+<link href="OpenMP-Implementation-Specifics.html" rel="up" title="OpenMP-Implementation Specifics"/>
+<link href="Memory-allocation.html" rel="next" title="Memory allocation"/>
+<link href="Implementation-defined-ICV-Initialization.html" rel="prev" title="Implementation-defined ICV Initialization"/>
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://gcc.gnu.org/texinfo-manuals.css"/>
+
+
+</head>
+
+<body lang="en">
+<div class="section-level-extent" id="OpenMP-Context-Selectors">
+<div class="nav-panel">
+<p>
+Next: <a href="Memory-allocation.html" accesskey="n" rel="next">Memory allocation</a>, Previous: <a href="Implementation-defined-ICV-Initialization.html" accesskey="p" rel="prev">Implementation-defined ICV Initialization</a>, Up: <a href="OpenMP-Implementation-Specifics.html" accesskey="u" rel="up">OpenMP-Implementation Specifics</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr/>
+<h3 class="section" id="OpenMP-Context-Selectors-1"><span>11.2 OpenMP Context Selectors<a class="copiable-link" href="OpenMP-Context-Selectors.html#OpenMP-Context-Selectors-1"> &para;</a></span></h3>
+
+<p><code class="code">vendor</code> is always <code class="code">gnu</code>. References are to the GCC manual.
+</p>
+
+<p>For the host compiler, <code class="code">kind</code> always matches <code class="code">host</code>; for the
+offloading architectures AMD GCN and Nvidia PTX, <code class="code">kind</code> always matches
+<code class="code">gpu</code>.  For the x86 family of computers, AMD GCN and Nvidia PTX
+the following traits are supported in addition; while OpenMP is supported
+on more architectures, GCC currently does not match any <code class="code">arch</code> or
+<code class="code">isa</code> traits for those.
+</p>
+<table class="multitable">
+<thead><tr><th width="65%"><code class="code">arch</code></th><th width="30%"><code class="code">isa</code></th></tr></thead>
+<tbody><tr><td width="65%"><code class="code">x86</code>, <code class="code">x86_64</code>, <code class="code">i386</code>, <code class="code">i486</code>,
+      <code class="code">i586</code>, <code class="code">i686</code>, <code class="code">ia32</code></td><td width="30%">See <code class="code">-m...</code> flags in &ldquo;x86 Options&rdquo; (without <code class="code">-m</code>)</td></tr>
+<tr><td width="65%"><code class="code">amdgcn</code>, <code class="code">gcn</code></td><td width="30%">See <code class="code">-march=</code> in &ldquo;AMD GCN Options&rdquo;<a class="footnote" id="DOCF5" href="OpenMP-Context-Selectors.html#FOOT5"><sup>5</sup></a></td></tr>
+<tr><td width="65%"><code class="code">nvptx</code></td><td width="30%">See <code class="code">-march=</code> in &ldquo;Nvidia PTX Options&rdquo;</td></tr>
+</tbody>
+</table>
+
+</div>
+<div class="footnotes-segment">
+<hr/>
+<h4 class="footnotes-heading">Footnotes</h4>
+
+<h5 class="footnote-body-heading"><a id="FOOT5" href="OpenMP-Context-Selectors.html#DOCF5">(5)</a></h5>
+<p>Additionally,
+      <code class="code">gfx803</code> is supported as an alias for <code class="code">fiji</code>.</p>
+</div>
+
+
+
+
+
+</body></html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html><html><!-- Created by GNU Texinfo 7.0dev, http://www.gnu.org/software/texinfo/ --><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!-- Copyright &copy; 2006-2023 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with the
+Invariant Sections being "Funding Free Software", the Front-Cover
+texts being (a) (see below), and with the Back-Cover Texts being (b)
+(see below).  A copy of the license is included in the section entitled
+"GNU Free Documentation License".
+
+(a) The FSF's Front-Cover Text is:
+
+A GNU Manual
+
+(b) The FSF's Back-Cover Text is:
+
+You have freedom to copy and modify this GNU Manual, like GNU
+     software.  Copies published by the Free Software Foundation raise
+     funds for GNU development. -->
+<a class="dashingAutolink" name="autolink-124"></a><a class="dashAnchor" name="//apple_ref/cpp/Package/omp_aligned_alloc%20%28GNU%20libgomp%29"></a><title>omp_aligned_alloc (GNU libgomp)</title>
+
+<meta name="description" content="omp_aligned_alloc (GNU libgomp)"/>
+<meta name="keywords" content="omp_aligned_alloc (GNU libgomp)"/>
+<meta name="resource-type" content="document"/>
+<meta name="distribution" content="global"/>
+<meta name="Generator" content="makeinfo"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<link href="index.html" rel="start" title="Top"/>
+<link href="Library-Index.html" rel="index" title="Library Index"/>
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents"/>
+<link href="Memory-Management-Routines.html" rel="up" title="Memory Management Routines"/>
+<link href="omp_005ffree.html" rel="next" title="omp_free"/>
+<link href="omp_005falloc.html" rel="prev" title="omp_alloc"/>
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://gcc.gnu.org/texinfo-manuals.css"/>
+
+
+</head>
+
+<body lang="en">
+<div class="subsection-level-extent" id="omp_005faligned_005falloc">
+<div class="nav-panel">
+<p>
+Next: <a href="omp_005ffree.html" accesskey="n" rel="next"><code class="code">omp_free</code> &ndash; Freeing memory allocated with OpenMP routines</a>, Previous: <a href="omp_005falloc.html" accesskey="p" rel="prev"><code class="code">omp_alloc</code> &ndash; Memory allocation with an allocator</a>, Up: <a href="Memory-Management-Routines.html" accesskey="u" rel="up">Memory Management Routines</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr/>
+<h4 class="subsection" id="omp_005faligned_005falloc----Memory-allocation-with-an-allocator-and-alignment"><span>3.10.6 <code class="code">omp_aligned_alloc</code> &ndash; Memory allocation with an allocator and alignment<a class="copiable-link" href="omp_005faligned_005falloc.html#omp_005faligned_005falloc----Memory-allocation-with-an-allocator-and-alignment"> &para;</a></span></h4>
+<dl class="table">
+<dt><em class="emph">Description</em>:</dt>
+<dd><p>Allocate memory with the specified allocator, which can either be a predefined
+allocator, an allocator handle or <code class="code">omp_null_allocator</code>.  If the allocators
+is <code class="code">omp_null_allocator</code>, the allocator specified by the
+<var class="var">def-allocator-var</var> ICV is used.  <var class="var">alignment</var> must be a positive power
+of two and <var class="var">size</var> must be a nonnegative number that is a multiple of the
+alignment and denotes the number of bytes to be allocated; if <var class="var">size</var> is
+zero, <code class="code">omp_aligned_alloc</code> will return a null pointer.  The alignment will
+be at least the maximal value required by <code class="code">alignment</code> trait of the
+allocator and the value of the  passed <var class="var">alignment</var> argument.  If successful,
+a pointer to the allocated memory is returned, otherwise the <code class="code">fallback</code>
+trait of the allocator determines the behavior.  The content of the allocated
+memory is unspecified.
+</p>
+<p>In <code class="code">target</code> regions, either the <code class="code">dynamic_allocators</code> clause must
+appear on a <code class="code">requires</code> directive in the same compilation unit &ndash; or the
+<var class="var">allocator</var> argument may only be a constant expression with the value of
+one of the predefined allocators and may not be <code class="code">omp_null_allocator</code>.
+</p>
+<p>Memory allocated by <code class="code">omp_aligned_alloc</code> must be freed using
+<code class="code">omp_free</code>.
+</p>
+</dd>
+<dt><em class="emph">C</em>:</dt>
+<dd><table class="multitable">
+<tbody><tr><td width="20%"><em class="emph">Prototype</em>:</td><td width="80%"><code class="code">void* omp_aligned_alloc(size_t alignment,</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">  size_t size,</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">  omp_allocator_handle_t allocator)</code></td></tr>
+</tbody>
+</table>
+
+</dd>
+<dt><em class="emph">C++</em>:</dt>
+<dd><table class="multitable">
+<tbody><tr><td width="20%"><em class="emph">Prototype</em>:</td><td width="80%"><code class="code">void* omp_aligned_alloc(size_t alignment,</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">  size_t size,</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">  omp_allocator_handle_t allocator=omp_null_allocator)</code></td></tr>
+</tbody>
+</table>
+
+</dd>
+<dt><em class="emph">Fortran</em>:</dt>
+<dd><table class="multitable">
+<tbody><tr><td width="20%"><em class="emph">Interface</em>:</td><td width="80%"><code class="code">type(c_ptr) function omp_aligned_alloc(alignment, size, allocator) bind(C)</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">use, intrinsic :: iso_c_binding, only : c_ptr, c_size_t</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">integer (c_size_t), value :: alignment, size</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">integer (omp_allocator_handle_kind), value :: allocator</code></td></tr>
+</tbody>
+</table>
+
+</dd>
+<dt><em class="emph">See also</em>:</dt>
+<dd><p><a class="ref" href="OMP_005fALLOCATOR.html"><code class="env">OMP_ALLOCATOR</code> &ndash; Set the default allocator</a>, <a class="ref" href="Memory-allocation.html">Memory allocation</a>, <a class="ref" href="omp_005fset_005fdefault_005fallocator.html"><code class="code">omp_set_default_allocator</code> &ndash; Set the default allocator</a>,
+<a class="ref" href="omp_005ffree.html"><code class="code">omp_free</code> &ndash; Freeing memory allocated with OpenMP routines</a>, <a class="ref" href="omp_005finit_005fallocator.html"><code class="code">omp_init_allocator</code> &ndash; Create an allocator</a>
+</p>
+</dd>
+<dt><em class="emph">Reference</em>:</dt>
+<dd><p><a class="uref" href="https://www.openmp.org">OpenMP specification v5.1</a>, Section 3.13.6
+</p></dd>
+</dl>
+
+
+
+</div>
+<hr/>
+<div class="nav-panel">
+<p>
+Next: <a href="omp_005ffree.html"><code class="code">omp_free</code> &ndash; Freeing memory allocated with OpenMP routines</a>, Previous: <a href="omp_005falloc.html"><code class="code">omp_alloc</code> &ndash; Memory allocation with an allocator</a>, Up: <a href="Memory-Management-Routines.html">Memory Management Routines</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+
+
+
+
+
+</body></html>

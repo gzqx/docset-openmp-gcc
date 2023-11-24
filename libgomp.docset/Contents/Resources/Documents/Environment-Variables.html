@@ -1,0 +1,114 @@
+<!DOCTYPE html><html><!-- Created by GNU Texinfo 7.0dev, http://www.gnu.org/software/texinfo/ --><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!-- Copyright &copy; 2006-2023 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with the
+Invariant Sections being "Funding Free Software", the Front-Cover
+texts being (a) (see below), and with the Back-Cover Texts being (b)
+(see below).  A copy of the license is included in the section entitled
+"GNU Free Documentation License".
+
+(a) The FSF's Front-Cover Text is:
+
+A GNU Manual
+
+(b) The FSF's Back-Cover Text is:
+
+You have freedom to copy and modify this GNU Manual, like GNU
+     software.  Copies published by the Free Software Foundation raise
+     funds for GNU development. -->
+<a class="dashingAutolink" name="autolink-10"></a><a class="dashAnchor" name="//apple_ref/cpp/Package/Environment%20Variables%20%28GNU%20libgomp%29"></a><title>Environment Variables (GNU libgomp)</title>
+
+<meta name="description" content="Environment Variables (GNU libgomp)"/>
+<meta name="keywords" content="Environment Variables (GNU libgomp)"/>
+<meta name="resource-type" content="document"/>
+<meta name="distribution" content="global"/>
+<meta name="Generator" content="makeinfo"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<link href="index.html" rel="start" title="Top"/>
+<link href="Library-Index.html" rel="index" title="Library Index"/>
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents"/>
+<link href="index.html" rel="up" title="Top"/>
+<link href="Enabling-OpenACC.html" rel="next" title="Enabling OpenACC"/>
+<link href="Runtime-Library-Routines.html" rel="prev" title="Runtime Library Routines"/>
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://gcc.gnu.org/texinfo-manuals.css"/>
+
+
+</head>
+
+<body lang="en">
+<div class="chapter-level-extent" id="Environment-Variables">
+<div class="nav-panel">
+<p>
+Next: <a href="Enabling-OpenACC.html" accesskey="n" rel="next">Enabling OpenACC</a>, Previous: <a href="Runtime-Library-Routines.html" accesskey="p" rel="prev">OpenMP Runtime Library Routines</a>, Up: <a href="index.html" accesskey="u" rel="up">Introduction</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr/>
+<h2 class="chapter" id="OpenMP-Environment-Variables"><span>4 OpenMP Environment Variables<a class="copiable-link" href="Environment-Variables.html#OpenMP-Environment-Variables"> &para;</a></span></h2>
+
+<p>The environment variables which beginning with <code class="env">OMP_</code> are defined by
+section 4 of the OpenMP specification in version 4.5 or in a later version
+of the specification, while those beginning with <code class="env">GOMP_</code> are GNU extensions.
+Most <code class="env">OMP_</code> environment variables have an associated internal control
+variable (ICV).
+</p>
+<p>For any OpenMP environment variable that sets an ICV and is neither
+<code class="code">OMP_DEFAULT_DEVICE</code> nor has global ICV scope, associated
+device-specific environment variables exist.  For them, the environment
+variable without suffix affects the host.  The suffix <code class="code">_DEV_</code> followed
+by a non-negative device number less that the number of available devices sets
+the ICV for the corresponding device.  The suffix <code class="code">_DEV</code> sets the ICV
+of all non-host devices for which a device-specific corresponding environment
+variable has not been set while the <code class="code">_ALL</code> suffix sets the ICV of all
+host and non-host devices for which a more specific corresponding environment
+variable is not set.
+</p>
+
+
+<ul class="mini-toc">
+<li><a href="OMP_005fALLOCATOR.html" accesskey="1"><code class="env">OMP_ALLOCATOR</code> &ndash; Set the default allocator</a></li>
+<li><a href="OMP_005fAFFINITY_005fFORMAT.html" accesskey="2"><code class="env">OMP_AFFINITY_FORMAT</code> &ndash; Set the format string used for affinity display</a></li>
+<li><a href="OMP_005fCANCELLATION.html" accesskey="3"><code class="env">OMP_CANCELLATION</code> &ndash; Set whether cancellation is activated</a></li>
+<li><a href="OMP_005fDISPLAY_005fAFFINITY.html" accesskey="4"><code class="env">OMP_DISPLAY_AFFINITY</code> &ndash; Display thread affinity information</a></li>
+<li><a href="OMP_005fDISPLAY_005fENV.html" accesskey="5"><code class="env">OMP_DISPLAY_ENV</code> &ndash; Show OpenMP version and environment variables</a></li>
+<li><a href="OMP_005fDEFAULT_005fDEVICE.html" accesskey="6"><code class="env">OMP_DEFAULT_DEVICE</code> &ndash; Set the device used in target regions</a></li>
+<li><a href="OMP_005fDYNAMIC.html" accesskey="7"><code class="env">OMP_DYNAMIC</code> &ndash; Dynamic adjustment of threads</a></li>
+<li><a href="OMP_005fMAX_005fACTIVE_005fLEVELS.html" accesskey="8"><code class="env">OMP_MAX_ACTIVE_LEVELS</code> &ndash; Set the maximum number of nested parallel regions</a></li>
+<li><a href="OMP_005fMAX_005fTASK_005fPRIORITY.html" accesskey="9"><code class="env">OMP_MAX_TASK_PRIORITY</code> &ndash; Set the maximum priority</a></li>
+<li><a href="OMP_005fNESTED.html"><code class="env">OMP_NESTED</code> &ndash; Nested parallel regions</a></li>
+<li><a href="OMP_005fNUM_005fTEAMS.html"><code class="env">OMP_NUM_TEAMS</code> &ndash; Specifies the number of teams to use by teams region</a></li>
+<li><a href="OMP_005fNUM_005fTHREADS.html"><code class="env">OMP_NUM_THREADS</code> &ndash; Specifies the number of threads to use</a></li>
+<li><a href="OMP_005fPROC_005fBIND.html"><code class="env">OMP_PROC_BIND</code> &ndash; Whether threads may be moved between CPUs</a></li>
+<li><a href="OMP_005fPLACES.html"><code class="env">OMP_PLACES</code> &ndash; Specifies on which CPUs the threads should be placed</a></li>
+<li><a href="OMP_005fSTACKSIZE.html"><code class="env">OMP_STACKSIZE</code> &ndash; Set default thread stack size</a></li>
+<li><a href="OMP_005fSCHEDULE.html"><code class="env">OMP_SCHEDULE</code> &ndash; How threads are scheduled</a></li>
+<li><a href="OMP_005fTARGET_005fOFFLOAD.html"><code class="env">OMP_TARGET_OFFLOAD</code> &ndash; Controls offloading behavior</a></li>
+<li><a href="OMP_005fTEAMS_005fTHREAD_005fLIMIT.html"><code class="env">OMP_TEAMS_THREAD_LIMIT</code> &ndash; Set the maximum number of threads imposed by teams</a></li>
+<li><a href="OMP_005fTHREAD_005fLIMIT.html"><code class="env">OMP_THREAD_LIMIT</code> &ndash; Set the maximum number of threads</a></li>
+<li><a href="OMP_005fWAIT_005fPOLICY.html"><code class="env">OMP_WAIT_POLICY</code> &ndash; How waiting threads are handled</a></li>
+<li><a href="GOMP_005fCPU_005fAFFINITY.html"><code class="env">GOMP_CPU_AFFINITY</code> &ndash; Bind threads to specific CPUs</a></li>
+<li><a href="GOMP_005fDEBUG.html"><code class="env">GOMP_DEBUG</code> &ndash; Enable debugging output</a></li>
+<li><a href="GOMP_005fSTACKSIZE.html"><code class="env">GOMP_STACKSIZE</code> &ndash; Set default thread stack size</a></li>
+<li><a href="GOMP_005fSPINCOUNT.html"><code class="env">GOMP_SPINCOUNT</code> &ndash; Set the busy-wait spin count</a></li>
+<li><a href="GOMP_005fRTEMS_005fTHREAD_005fPOOLS.html"><code class="env">GOMP_RTEMS_THREAD_POOLS</code> &ndash; Set the RTEMS specific thread pools</a></li>
+</ul>
+</div>
+<hr/>
+<div class="nav-panel">
+<p>
+Next: <a href="Enabling-OpenACC.html">Enabling OpenACC</a>, Previous: <a href="Runtime-Library-Routines.html">OpenMP Runtime Library Routines</a>, Up: <a href="index.html">Introduction</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+
+
+
+
+
+</body></html>

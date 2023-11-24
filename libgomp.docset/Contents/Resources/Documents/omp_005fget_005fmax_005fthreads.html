@@ -1,0 +1,93 @@
+<!DOCTYPE html><html><!-- Created by GNU Texinfo 7.0dev, http://www.gnu.org/software/texinfo/ --><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!-- Copyright &copy; 2006-2023 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with the
+Invariant Sections being "Funding Free Software", the Front-Cover
+texts being (a) (see below), and with the Back-Cover Texts being (b)
+(see below).  A copy of the license is included in the section entitled
+"GNU Free Documentation License".
+
+(a) The FSF's Front-Cover Text is:
+
+A GNU Manual
+
+(b) The FSF's Back-Cover Text is:
+
+You have freedom to copy and modify this GNU Manual, like GNU
+     software.  Copies published by the Free Software Foundation raise
+     funds for GNU development. -->
+<a class="dashingAutolink" name="autolink-146"></a><a class="dashAnchor" name="//apple_ref/cpp/Package/omp_get_max_threads%20%28GNU%20libgomp%29"></a><title>omp_get_max_threads (GNU libgomp)</title>
+
+<meta name="description" content="omp_get_max_threads (GNU libgomp)"/>
+<meta name="keywords" content="omp_get_max_threads (GNU libgomp)"/>
+<meta name="resource-type" content="document"/>
+<meta name="distribution" content="global"/>
+<meta name="Generator" content="makeinfo"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<link href="index.html" rel="start" title="Top"/>
+<link href="Library-Index.html" rel="index" title="Library Index"/>
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents"/>
+<link href="Thread-Team-Routines.html" rel="up" title="Thread Team Routines"/>
+<link href="omp_005fget_005fthread_005fnum.html" rel="next" title="omp_get_thread_num"/>
+<link href="omp_005fget_005fnum_005fthreads.html" rel="prev" title="omp_get_num_threads"/>
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://gcc.gnu.org/texinfo-manuals.css"/>
+
+
+</head>
+
+<body lang="en">
+<div class="subsection-level-extent" id="omp_005fget_005fmax_005fthreads">
+<div class="nav-panel">
+<p>
+Next: <a href="omp_005fget_005fthread_005fnum.html" accesskey="n" rel="next"><code class="code">omp_get_thread_num</code> &ndash; Current thread ID</a>, Previous: <a href="omp_005fget_005fnum_005fthreads.html" accesskey="p" rel="prev"><code class="code">omp_get_num_threads</code> &ndash; Size of the active team</a>, Up: <a href="Thread-Team-Routines.html" accesskey="u" rel="up">Thread Team Routines</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr/>
+<h4 class="subsection" id="omp_005fget_005fmax_005fthreads----Maximum-number-of-threads-of-parallel-region"><span>3.1.3 <code class="code">omp_get_max_threads</code> &ndash; Maximum number of threads of parallel region<a class="copiable-link" href="omp_005fget_005fmax_005fthreads.html#omp_005fget_005fmax_005fthreads----Maximum-number-of-threads-of-parallel-region"> &para;</a></span></h4>
+<dl class="table">
+<dt><em class="emph">Description</em>:</dt>
+<dd><p>Return the maximum number of threads used for the current parallel region
+that does not use the clause <code class="code">num_threads</code>.
+</p>
+</dd>
+<dt><em class="emph">C/C++</em>:</dt>
+<dd><table class="multitable">
+<tbody><tr><td width="20%"><em class="emph">Prototype</em>:</td><td width="80%"><code class="code">int omp_get_max_threads(void);</code></td></tr>
+</tbody>
+</table>
+
+</dd>
+<dt><em class="emph">Fortran</em>:</dt>
+<dd><table class="multitable">
+<tbody><tr><td width="20%"><em class="emph">Interface</em>:</td><td width="80%"><code class="code">integer function omp_get_max_threads()</code></td></tr>
+</tbody>
+</table>
+
+</dd>
+<dt><em class="emph">See also</em>:</dt>
+<dd><p><a class="ref" href="omp_005fset_005fnum_005fthreads.html"><code class="code">omp_set_num_threads</code> &ndash; Set upper team size limit</a>, <a class="ref" href="omp_005fset_005fdynamic.html"><code class="code">omp_set_dynamic</code> &ndash; Enable/disable dynamic teams</a>, <a class="ref" href="omp_005fget_005fthread_005flimit.html"><code class="code">omp_get_thread_limit</code> &ndash; Maximum number of threads</a>
+</p>
+</dd>
+<dt><em class="emph">Reference</em>:</dt>
+<dd><p><a class="uref" href="https://www.openmp.org">OpenMP specification v4.5</a>, Section 3.2.3.
+</p></dd>
+</dl>
+
+
+
+</div>
+
+
+
+
+
+</body></html>

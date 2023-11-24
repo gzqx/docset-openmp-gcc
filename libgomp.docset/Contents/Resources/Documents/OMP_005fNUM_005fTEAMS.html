@@ -1,0 +1,84 @@
+<!DOCTYPE html><html><!-- Created by GNU Texinfo 7.0dev, http://www.gnu.org/software/texinfo/ --><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!-- Copyright &copy; 2006-2023 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with the
+Invariant Sections being "Funding Free Software", the Front-Cover
+texts being (a) (see below), and with the Back-Cover Texts being (b)
+(see below).  A copy of the license is included in the section entitled
+"GNU Free Documentation License".
+
+(a) The FSF's Front-Cover Text is:
+
+A GNU Manual
+
+(b) The FSF's Back-Cover Text is:
+
+You have freedom to copy and modify this GNU Manual, like GNU
+     software.  Copies published by the Free Software Foundation raise
+     funds for GNU development. -->
+<a class="dashingAutolink" name="autolink-49"></a><a class="dashAnchor" name="//apple_ref/cpp/Package/OMP_NUM_TEAMS%20%28GNU%20libgomp%29"></a><title>OMP_NUM_TEAMS (GNU libgomp)</title>
+
+<meta name="description" content="OMP_NUM_TEAMS (GNU libgomp)"/>
+<meta name="keywords" content="OMP_NUM_TEAMS (GNU libgomp)"/>
+<meta name="resource-type" content="document"/>
+<meta name="distribution" content="global"/>
+<meta name="Generator" content="makeinfo"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<link href="index.html" rel="start" title="Top"/>
+<link href="Library-Index.html" rel="index" title="Library Index"/>
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents"/>
+<link href="Environment-Variables.html" rel="up" title="Environment Variables"/>
+<link href="OMP_005fNUM_005fTHREADS.html" rel="next" title="OMP_NUM_THREADS"/>
+<link href="OMP_005fNESTED.html" rel="prev" title="OMP_NESTED"/>
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://gcc.gnu.org/texinfo-manuals.css"/>
+
+
+</head>
+
+<body lang="en">
+<div class="section-level-extent" id="OMP_005fNUM_005fTEAMS">
+<div class="nav-panel">
+<p>
+Next: <a href="OMP_005fNUM_005fTHREADS.html" accesskey="n" rel="next"><code class="env">OMP_NUM_THREADS</code> &ndash; Specifies the number of threads to use</a>, Previous: <a href="OMP_005fNESTED.html" accesskey="p" rel="prev"><code class="env">OMP_NESTED</code> &ndash; Nested parallel regions</a>, Up: <a href="Environment-Variables.html" accesskey="u" rel="up">OpenMP Environment Variables</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr/>
+<h3 class="section" id="OMP_005fNUM_005fTEAMS----Specifies-the-number-of-teams-to-use-by-teams-region"><span>4.11 <code class="env">OMP_NUM_TEAMS</code> &ndash; Specifies the number of teams to use by teams region<a class="copiable-link" href="OMP_005fNUM_005fTEAMS.html#OMP_005fNUM_005fTEAMS----Specifies-the-number-of-teams-to-use-by-teams-region"> &para;</a></span></h3>
+<a class="index-entry-id" id="index-Environment-Variable-10"></a>
+<dl class="table">
+<dt><em class="emph">ICV:</em> <var class="var">nteams-var</var></dt>
+<dt><em class="emph">Scope:</em> device</dt>
+<dt><em class="emph">Description</em>:</dt>
+<dd><p>Specifies the upper bound for number of teams to use in teams regions
+without explicit <code class="code">num_teams</code> clause.  The value of this variable shall
+be a positive integer.  If undefined it defaults to 0 which means
+implementation defined upper bound.
+</p>
+</dd>
+<dt><em class="emph">See also</em>:</dt>
+<dd><p><a class="ref" href="omp_005fset_005fnum_005fteams.html"><code class="code">omp_set_num_teams</code> &ndash; Set upper teams limit for teams construct</a>
+</p>
+</dd>
+<dt><em class="emph">Reference</em>:</dt>
+<dd><p><a class="uref" href="https://www.openmp.org">OpenMP specification v5.1</a>, Section 6.23
+</p></dd>
+</dl>
+
+
+
+</div>
+
+
+
+
+
+</body></html>

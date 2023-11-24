@@ -1,0 +1,97 @@
+<!DOCTYPE html><html><!-- Created by GNU Texinfo 7.0dev, http://www.gnu.org/software/texinfo/ --><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!-- Copyright &copy; 2006-2023 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with the
+Invariant Sections being "Funding Free Software", the Front-Cover
+texts being (a) (see below), and with the Back-Cover Texts being (b)
+(see below).  A copy of the license is included in the section entitled
+"GNU Free Documentation License".
+
+(a) The FSF's Front-Cover Text is:
+
+A GNU Manual
+
+(b) The FSF's Back-Cover Text is:
+
+You have freedom to copy and modify this GNU Manual, like GNU
+     software.  Copies published by the Free Software Foundation raise
+     funds for GNU development. -->
+<a class="dashingAutolink" name="autolink-104"></a><a class="dashAnchor" name="//apple_ref/cpp/Package/acc_on_device%20%28GNU%20libgomp%29"></a><title>acc_on_device (GNU libgomp)</title>
+
+<meta name="description" content="acc_on_device (GNU libgomp)"/>
+<meta name="keywords" content="acc_on_device (GNU libgomp)"/>
+<meta name="resource-type" content="document"/>
+<meta name="distribution" content="global"/>
+<meta name="Generator" content="makeinfo"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<link href="index.html" rel="start" title="Top"/>
+<link href="Library-Index.html" rel="index" title="Library Index"/>
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents"/>
+<link href="OpenACC-Runtime-Library-Routines.html" rel="up" title="OpenACC Runtime Library Routines"/>
+<link href="acc_005fmalloc.html" rel="next" title="acc_malloc"/>
+<link href="acc_005fshutdown.html" rel="prev" title="acc_shutdown"/>
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://gcc.gnu.org/texinfo-manuals.css"/>
+
+
+</head>
+
+<body lang="en">
+<div class="section-level-extent" id="acc_005fon_005fdevice">
+<div class="nav-panel">
+<p>
+Next: <a href="acc_005fmalloc.html" accesskey="n" rel="next"><code class="code">acc_malloc</code> &ndash; Allocate device memory.</a>, Previous: <a href="acc_005fshutdown.html" accesskey="p" rel="prev"><code class="code">acc_shutdown</code> &ndash; Shuts down the runtime for a specific device type.</a>, Up: <a href="OpenACC-Runtime-Library-Routines.html" accesskey="u" rel="up">OpenACC Runtime Library Routines</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr/>
+<h3 class="section" id="acc_005fon_005fdevice----Whether-executing-on-a-particular-device"><span>6.15 <code class="code">acc_on_device</code> &ndash; Whether executing on a particular device<a class="copiable-link" href="acc_005fon_005fdevice.html#acc_005fon_005fdevice----Whether-executing-on-a-particular-device"> &para;</a></span></h3>
+<dl class="table">
+<dt><em class="emph">Description</em>:</dt>
+<dd><p>This function returns whether the program is executing on a particular
+device specified in <var class="var">devicetype</var>. In C/C++ a non-zero value is
+returned to indicate the device is executing on the specified device type.
+In Fortran, <code class="code">true</code> is returned. If the program is not executing
+on the specified device type C/C++ returns zero, while Fortran
+returns <code class="code">false</code>.
+</p>
+</dd>
+<dt><em class="emph">C/C++</em>:</dt>
+<dd><table class="multitable">
+<tbody><tr><td width="20%"><em class="emph">Prototype</em>:</td><td width="80%"><code class="code">acc_on_device(acc_device_t devicetype);</code></td></tr>
+</tbody>
+</table>
+
+</dd>
+<dt><em class="emph">Fortran</em>:</dt>
+<dd><table class="multitable">
+<tbody><tr><td width="20%"><em class="emph">Interface</em>:</td><td width="80%"><code class="code">function acc_on_device(devicetype)</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">integer(acc_device_kind) devicetype</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">logical acc_on_device</code></td></tr>
+</tbody>
+</table>
+
+
+</dd>
+<dt><em class="emph">Reference</em>:</dt>
+<dd><p><a class="uref" href="https://www.openacc.org">OpenACC specification v2.6</a>, section
+3.2.17.
+</p></dd>
+</dl>
+
+
+
+</div>
+
+
+
+
+
+</body></html>

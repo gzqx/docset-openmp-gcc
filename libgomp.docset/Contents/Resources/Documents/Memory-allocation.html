@@ -1,0 +1,155 @@
+<!DOCTYPE html><html><!-- Created by GNU Texinfo 7.0dev, http://www.gnu.org/software/texinfo/ --><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!-- Copyright &copy; 2006-2023 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with the
+Invariant Sections being "Funding Free Software", the Front-Cover
+texts being (a) (see below), and with the Back-Cover Texts being (b)
+(see below).  A copy of the license is included in the section entitled
+"GNU Free Documentation License".
+
+(a) The FSF's Front-Cover Text is:
+
+A GNU Manual
+
+(b) The FSF's Back-Cover Text is:
+
+You have freedom to copy and modify this GNU Manual, like GNU
+     software.  Copies published by the Free Software Foundation raise
+     funds for GNU development. -->
+<a class="dashingAutolink" name="autolink-38"></a><a class="dashAnchor" name="//apple_ref/cpp/Package/Memory%20allocation%20%28GNU%20libgomp%29"></a><title>Memory allocation (GNU libgomp)</title>
+
+<meta name="description" content="Memory allocation (GNU libgomp)"/>
+<meta name="keywords" content="Memory allocation (GNU libgomp)"/>
+<meta name="resource-type" content="document"/>
+<meta name="distribution" content="global"/>
+<meta name="Generator" content="makeinfo"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<link href="index.html" rel="start" title="Top"/>
+<link href="Library-Index.html" rel="index" title="Library Index"/>
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents"/>
+<link href="OpenMP-Implementation-Specifics.html" rel="up" title="OpenMP-Implementation Specifics"/>
+<link href="OpenMP-Context-Selectors.html" rel="prev" title="OpenMP Context Selectors"/>
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+span:hover a.copiable-link {visibility: visible}
+ul.mark-bullet {list-style-type: disc}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://gcc.gnu.org/texinfo-manuals.css"/>
+
+
+</head>
+
+<body lang="en">
+<div class="section-level-extent" id="Memory-allocation">
+<div class="nav-panel">
+<p>
+Previous: <a href="OpenMP-Context-Selectors.html" accesskey="p" rel="prev">OpenMP Context Selectors</a>, Up: <a href="OpenMP-Implementation-Specifics.html" accesskey="u" rel="up">OpenMP-Implementation Specifics</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr/>
+<h3 class="section" id="Memory-allocation-1"><span>11.3 Memory allocation<a class="copiable-link" href="Memory-allocation.html#Memory-allocation-1"> &para;</a></span></h3>
+
+<p>The description below applies to:
+</p>
+<ul class="itemize mark-bullet">
+<li>Explicit use of the OpenMP API routines, see
+      <a class="ref" href="Memory-Management-Routines.html">Memory Management Routines</a>.
+</li><li>The <code class="code">allocate</code> clause, except when the <code class="code">allocator</code> modifier is a
+      constant expression with value <code class="code">omp_default_mem_alloc</code> and no
+      <code class="code">align</code> modifier has been specified. (In that case, the normal
+      <code class="code">malloc</code> allocation is used.)
+</li><li>Using the <code class="code">allocate</code> directive for automatic/stack variables, except
+      when the <code class="code">allocator</code> clause is a constant expression with value
+      <code class="code">omp_default_mem_alloc</code> and no <code class="code">align</code> clause has been
+      specified. (In that case, the normal allocation is used: stack allocation
+      and, sometimes for Fortran, also <code class="code">malloc</code> [depending on flags such as
+      <samp class="option">-fstack-arrays</samp>].)
+</li><li>Using the <code class="code">allocate</code> directive for variable in static memory is
+      currently not supported (compile time error).
+</li><li>Using the <code class="code">allocators</code> directive for Fortran pointers and
+      allocatables is currently not supported (compile time error).
+</li></ul>
+
+<p>For the available predefined allocators and, as applicable, their associated
+predefined memory spaces and for the available traits and their default values,
+see <a class="ref" href="OMP_005fALLOCATOR.html"><code class="env">OMP_ALLOCATOR</code> &ndash; Set the default allocator</a>.  Predefined allocators without an associated memory
+space use the <code class="code">omp_default_mem_space</code> memory space.
+</p>
+<p>For the memory spaces, the following applies:
+</p><ul class="itemize mark-bullet">
+<li><code class="code">omp_default_mem_space</code> is supported
+</li><li><code class="code">omp_const_mem_space</code> maps to <code class="code">omp_default_mem_space</code>
+</li><li><code class="code">omp_low_lat_mem_space</code> maps to <code class="code">omp_default_mem_space</code>
+</li><li><code class="code">omp_large_cap_mem_space</code> maps to <code class="code">omp_default_mem_space</code>,
+      unless the memkind library is available
+</li><li><code class="code">omp_high_bw_mem_space</code> maps to <code class="code">omp_default_mem_space</code>,
+      unless the memkind library is available
+</li></ul>
+
+<p>On Linux systems, where the <a class="uref" href="https://github.com/memkind/memkind">memkind
+library</a> (<code class="code">libmemkind.so.0</code>) is available at runtime, it is used when
+creating memory allocators requesting
+</p>
+<ul class="itemize mark-bullet">
+<li>the memory space <code class="code">omp_high_bw_mem_space</code>
+</li><li>the memory space <code class="code">omp_large_cap_mem_space</code>
+</li><li>the <code class="code">partition</code> trait <code class="code">interleaved</code>; note that for
+      <code class="code">omp_large_cap_mem_space</code> the allocation will not be interleaved
+</li></ul>
+
+<p>On Linux systems, where the <a class="uref" href="https://github.com/numactl/numactl">numa
+library</a> (<code class="code">libnuma.so.1</code>) is available at runtime, it used when creating
+memory allocators requesting
+</p>
+<ul class="itemize mark-bullet">
+<li>the <code class="code">partition</code> trait <code class="code">nearest</code>, except when both the
+libmemkind library is available and the memory space is either
+<code class="code">omp_large_cap_mem_space</code> or <code class="code">omp_high_bw_mem_space</code>
+</li></ul>
+
+<p>Note that the numa library will round up the allocation size to a multiple of
+the system page size; therefore, consider using it only with large data or
+by sharing allocations via the <code class="code">pool_size</code> trait.  Furthermore, the Linux
+kernel does not guarantee that an allocation will always be on the nearest NUMA
+node nor that after reallocation the same node will be used.  Note additionally
+that, on Linux, the default setting of the memory placement policy is to use the
+current node; therefore, unless the memory placement policy has been overridden,
+the <code class="code">partition</code> trait <code class="code">environment</code> (the default) will be effectively
+a <code class="code">nearest</code> allocation.
+</p>
+<p>Additional notes regarding the traits:
+</p><ul class="itemize mark-bullet">
+<li>The <code class="code">pinned</code> trait is unsupported.
+</li><li>The default for the <code class="code">pool_size</code> trait is no pool and for every
+      (re)allocation the associated library routine is called, which might
+      internally use a memory pool.
+</li><li>For the <code class="code">partition</code> trait, the partition part size will be the same
+      as the requested size (i.e. <code class="code">interleaved</code> or <code class="code">blocked</code> has no
+      effect), except for <code class="code">interleaved</code> when the memkind library is
+      available.  Furthermore, for <code class="code">nearest</code> and unless the numa library
+      is available, the memory might not be on the same NUMA node as thread
+      that allocated the memory; on Linux, this is in particular the case when
+      the memory placement policy is set to preferred.
+</li><li>The <code class="code">access</code> trait has no effect such that memory is always
+      accessible by all threads.
+</li><li>The <code class="code">sync_hint</code> trait has no effect.
+</li></ul>
+
+
+</div>
+<hr/>
+<div class="nav-panel">
+<p>
+Previous: <a href="OpenMP-Context-Selectors.html">OpenMP Context Selectors</a>, Up: <a href="OpenMP-Implementation-Specifics.html">OpenMP-Implementation Specifics</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+
+
+
+
+
+</body></html>

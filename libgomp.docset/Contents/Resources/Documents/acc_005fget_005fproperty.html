@@ -1,0 +1,118 @@
+<!DOCTYPE html><html><!-- Created by GNU Texinfo 7.0dev, http://www.gnu.org/software/texinfo/ --><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!-- Copyright &copy; 2006-2023 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with the
+Invariant Sections being "Funding Free Software", the Front-Cover
+texts being (a) (see below), and with the Back-Cover Texts being (b)
+(see below).  A copy of the license is included in the section entitled
+"GNU Free Documentation License".
+
+(a) The FSF's Front-Cover Text is:
+
+A GNU Manual
+
+(b) The FSF's Back-Cover Text is:
+
+You have freedom to copy and modify this GNU Manual, like GNU
+     software.  Copies published by the Free Software Foundation raise
+     funds for GNU development. -->
+<a class="dashingAutolink" name="autolink-96"></a><a class="dashAnchor" name="//apple_ref/cpp/Package/acc_get_property%20%28GNU%20libgomp%29"></a><title>acc_get_property (GNU libgomp)</title>
+
+<meta name="description" content="acc_get_property (GNU libgomp)"/>
+<meta name="keywords" content="acc_get_property (GNU libgomp)"/>
+<meta name="resource-type" content="document"/>
+<meta name="distribution" content="global"/>
+<meta name="Generator" content="makeinfo"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<link href="index.html" rel="start" title="Top"/>
+<link href="Library-Index.html" rel="index" title="Library Index"/>
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents"/>
+<link href="OpenACC-Runtime-Library-Routines.html" rel="up" title="OpenACC Runtime Library Routines"/>
+<link href="acc_005fasync_005ftest.html" rel="next" title="acc_async_test"/>
+<link href="acc_005fget_005fdevice_005fnum.html" rel="prev" title="acc_get_device_num"/>
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://gcc.gnu.org/texinfo-manuals.css"/>
+
+
+</head>
+
+<body lang="en">
+<div class="section-level-extent" id="acc_005fget_005fproperty">
+<div class="nav-panel">
+<p>
+Next: <a href="acc_005fasync_005ftest.html" accesskey="n" rel="next"><code class="code">acc_async_test</code> &ndash; Test for completion of a specific asynchronous operation.</a>, Previous: <a href="acc_005fget_005fdevice_005fnum.html" accesskey="p" rel="prev"><code class="code">acc_get_device_num</code> &ndash; Get device number to be used.</a>, Up: <a href="OpenACC-Runtime-Library-Routines.html" accesskey="u" rel="up">OpenACC Runtime Library Routines</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr/>
+<h3 class="section" id="acc_005fget_005fproperty----Get-device-property_002e"><span>6.6 <code class="code">acc_get_property</code> &ndash; Get device property.<a class="copiable-link" href="acc_005fget_005fproperty.html#acc_005fget_005fproperty----Get-device-property_002e"> &para;</a></span></h3>
+<a class="index-entry-id" id="index-acc_005fget_005fproperty"></a>
+<a class="index-entry-id" id="index-acc_005fget_005fproperty_005fstring"></a>
+<dl class="table">
+<dt><em class="emph">Description</em></dt>
+<dd><p>These routines return the value of the specified <var class="var">property</var> for the
+device being queried according to <var class="var">devicenum</var> and <var class="var">devicetype</var>.
+Integer-valued and string-valued properties are returned by
+<code class="code">acc_get_property</code> and <code class="code">acc_get_property_string</code> respectively.
+The Fortran <code class="code">acc_get_property_string</code> subroutine returns the string
+retrieved in its fourth argument while the remaining entry points are
+functions, which pass the return value as their result.
+</p>
+<p>Note for Fortran, only: the OpenACC technical committee corrected and, hence,
+modified the interface introduced in OpenACC 2.6.  The kind-value parameter
+<code class="code">acc_device_property</code> has been renamed to <code class="code">acc_device_property_kind</code>
+for consistency and the return type of the <code class="code">acc_get_property</code> function is
+now a <code class="code">c_size_t</code> integer instead of a <code class="code">acc_device_property</code> integer.
+The parameter <code class="code">acc_device_property</code> is still provided,
+but might be removed in a future version of GCC.
+</p>
+</dd>
+<dt><em class="emph">C/C++</em>:</dt>
+<dd><table class="multitable">
+<tbody><tr><td width="20%"><em class="emph">Prototype</em>:</td><td width="80%"><code class="code">size_t acc_get_property(int devicenum, acc_device_t devicetype, acc_device_property_t property);</code></td></tr>
+<tr><td width="20%"><em class="emph">Prototype</em>:</td><td width="80%"><code class="code">const char *acc_get_property_string(int devicenum, acc_device_t devicetype, acc_device_property_t property);</code></td></tr>
+</tbody>
+</table>
+
+</dd>
+<dt><em class="emph">Fortran</em>:</dt>
+<dd><table class="multitable">
+<tbody><tr><td width="20%"><em class="emph">Interface</em>:</td><td width="80%"><code class="code">function acc_get_property(devicenum, devicetype, property)</code></td></tr>
+<tr><td width="20%"><em class="emph">Interface</em>:</td><td width="80%"><code class="code">subroutine acc_get_property_string(devicenum, devicetype, property, string)</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">use ISO_C_Binding, only: c_size_t</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">integer devicenum</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">integer(kind=acc_device_kind) devicetype</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">integer(kind=acc_device_property_kind) property</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">integer(kind=c_size_t) acc_get_property</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">character(*) string</code></td></tr>
+</tbody>
+</table>
+
+</dd>
+<dt><em class="emph">Reference</em>:</dt>
+<dd><p><a class="uref" href="https://www.openacc.org">OpenACC specification v2.6</a>, section
+3.2.6.
+</p></dd>
+</dl>
+
+
+
+</div>
+<hr/>
+<div class="nav-panel">
+<p>
+Next: <a href="acc_005fasync_005ftest.html"><code class="code">acc_async_test</code> &ndash; Test for completion of a specific asynchronous operation.</a>, Previous: <a href="acc_005fget_005fdevice_005fnum.html"><code class="code">acc_get_device_num</code> &ndash; Get device number to be used.</a>, Up: <a href="OpenACC-Runtime-Library-Routines.html">OpenACC Runtime Library Routines</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+
+
+
+
+
+</body></html>

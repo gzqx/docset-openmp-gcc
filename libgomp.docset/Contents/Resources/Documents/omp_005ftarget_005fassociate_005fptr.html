@@ -1,0 +1,135 @@
+<!DOCTYPE html><html><!-- Created by GNU Texinfo 7.0dev, http://www.gnu.org/software/texinfo/ --><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!-- Copyright &copy; 2006-2023 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with the
+Invariant Sections being "Funding Free Software", the Front-Cover
+texts being (a) (see below), and with the Back-Cover Texts being (b)
+(see below).  A copy of the license is included in the section entitled
+"GNU Free Documentation License".
+
+(a) The FSF's Front-Cover Text is:
+
+A GNU Manual
+
+(b) The FSF's Back-Cover Text is:
+
+You have freedom to copy and modify this GNU Manual, like GNU
+     software.  Copies published by the Free Software Foundation raise
+     funds for GNU development. -->
+<a class="dashingAutolink" name="autolink-182"></a><a class="dashAnchor" name="//apple_ref/cpp/Package/omp_target_associate_ptr%20%28GNU%20libgomp%29"></a><title>omp_target_associate_ptr (GNU libgomp)</title>
+
+<meta name="description" content="omp_target_associate_ptr (GNU libgomp)"/>
+<meta name="keywords" content="omp_target_associate_ptr (GNU libgomp)"/>
+<meta name="resource-type" content="document"/>
+<meta name="distribution" content="global"/>
+<meta name="Generator" content="makeinfo"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<link href="index.html" rel="start" title="Top"/>
+<link href="Library-Index.html" rel="index" title="Library Index"/>
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents"/>
+<link href="Device-Memory-Routines.html" rel="up" title="Device Memory Routines"/>
+<link href="omp_005ftarget_005fdisassociate_005fptr.html" rel="next" title="omp_target_disassociate_ptr"/>
+<link href="omp_005ftarget_005fis_005fpresent.html" rel="prev" title="omp_target_is_present"/>
+<style type="text/css">
+<!--
+a.copiable-link {visibility: hidden; text-decoration: none; line-height: 0em}
+span:hover a.copiable-link {visibility: visible}
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://gcc.gnu.org/texinfo-manuals.css"/>
+
+
+</head>
+
+<body lang="en">
+<div class="subsection-level-extent" id="omp_005ftarget_005fassociate_005fptr">
+<div class="nav-panel">
+<p>
+Next: <a href="omp_005ftarget_005fdisassociate_005fptr.html" accesskey="n" rel="next"><code class="code">omp_target_disassociate_ptr</code> &ndash; Remove device&ndash;host pointer association</a>, Previous: <a href="omp_005ftarget_005fis_005fpresent.html" accesskey="p" rel="prev"><code class="code">omp_target_is_present</code> &ndash; Check whether storage is mapped</a>, Up: <a href="Device-Memory-Routines.html" accesskey="u" rel="up">Device Memory Routines</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr/>
+<h4 class="subsection" id="omp_005ftarget_005fassociate_005fptr----Associate-a-device-pointer-with-a-host-pointer"><span>3.6.4 <code class="code">omp_target_associate_ptr</code> &ndash; Associate a device pointer with a host pointer<a class="copiable-link" href="omp_005ftarget_005fassociate_005fptr.html#omp_005ftarget_005fassociate_005fptr----Associate-a-device-pointer-with-a-host-pointer"> &para;</a></span></h4>
+<dl class="table">
+<dt><em class="emph">Description</em>:</dt>
+<dd><p>This routine associates storage on the host with storage on a device identified
+by <var class="var">device_num</var>.  The device pointer is usually obtained by calling
+<code class="code">omp_target_alloc</code> or by other means (but not by using the <code class="code">map</code>
+clauses or the <code class="code">declare target</code> directive).  The host pointer should point
+to memory that has a storage size of at least <var class="var">size</var>.
+</p>
+<p>The <var class="var">device_offset</var> parameter specifies the offset into <var class="var">device_ptr</var>
+that is used as the base address for the device side of the mapping; the
+storage size should be at least <var class="var">device_offset</var> plus <var class="var">size</var>.
+</p>
+<p>After the association, the host pointer can be used in a <code class="code">map</code> clause and
+in the <code class="code">to</code> and <code class="code">from</code> clauses of the <code class="code">target update</code> directive
+to transfer data between the associated pointers. The reference count of such
+associated storage is infinite.  The association can be removed by calling
+<code class="code">omp_target_disassociate_ptr</code> which should be done before the lifetime
+of either either storage ends.
+</p>
+<p>The routine returns nonzero (<code class="code">EINVAL</code>) when the <var class="var">device_num</var> invalid,
+for when the initial device or the associated device shares memory with the
+host.  <code class="code">omp_target_associate_ptr</code> returns zero if <var class="var">host_ptr</var> points
+into already associated storage that is fully inside of a previously associated
+memory.  Otherwise, if the association was successful zero is returned; if none
+of the cases above apply, nonzero (<code class="code">EINVAL</code>) is returned.
+</p>
+<p>The <code class="code">omp_target_is_present</code> routine can be used to test whether
+associated storage for a device pointer exists.
+</p>
+<p>Running this routine in a <code class="code">target</code> region except on the initial device
+is not supported.
+</p>
+</dd>
+<dt><em class="emph">C/C++</em></dt>
+<dd><table class="multitable">
+<tbody><tr><td width="20%"><em class="emph">Prototype</em>:</td><td width="80%"><code class="code">int omp_target_associate_ptr(const void *host_ptr,</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">                             const void *device_ptr,</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">                             size_t size,</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">                             size_t device_offset,</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">                             int device_num)</code></td></tr>
+</tbody>
+</table>
+
+</dd>
+<dt><em class="emph">Fortran</em>:</dt>
+<dd><table class="multitable">
+<tbody><tr><td width="20%"><em class="emph">Interface</em>:</td><td width="80%"><code class="code">integer(c_int) function omp_target_associate_ptr(host_ptr, &amp;</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">    device_ptr, size, device_offset, device_num) bind(C)</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">use, intrinsic :: iso_c_binding, only: c_ptr, c_int, c_size_t</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">type(c_ptr), value :: host_ptr, device_ptr</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">integer(c_size_t), value :: size, device_offset</code></td></tr>
+<tr><td width="20%"></td><td width="80%"><code class="code">integer(c_int), value :: device_num</code></td></tr>
+</tbody>
+</table>
+
+</dd>
+<dt><em class="emph">See also</em>:</dt>
+<dd><p><a class="ref" href="omp_005ftarget_005fdisassociate_005fptr.html"><code class="code">omp_target_disassociate_ptr</code> &ndash; Remove device&ndash;host pointer association</a>, <a class="ref" href="omp_005ftarget_005fis_005fpresent.html"><code class="code">omp_target_is_present</code> &ndash; Check whether storage is mapped</a>,
+<a class="ref" href="omp_005ftarget_005falloc.html"><code class="code">omp_target_alloc</code> &ndash; Allocate device memory</a>
+</p>
+</dd>
+<dt><em class="emph">Reference</em>:</dt>
+<dd><p><a class="uref" href="https://www.openmp.org">OpenMP specification v5.1</a>, Section 18.8.9
+</p></dd>
+</dl>
+
+
+
+</div>
+<hr/>
+<div class="nav-panel">
+<p>
+Next: <a href="omp_005ftarget_005fdisassociate_005fptr.html"><code class="code">omp_target_disassociate_ptr</code> &ndash; Remove device&ndash;host pointer association</a>, Previous: <a href="omp_005ftarget_005fis_005fpresent.html"><code class="code">omp_target_is_present</code> &ndash; Check whether storage is mapped</a>, Up: <a href="Device-Memory-Routines.html">Device Memory Routines</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Library-Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+
+
+
+
+
+</body></html>
